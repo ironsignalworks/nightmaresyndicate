@@ -2,7 +2,7 @@ import { Panel } from '@/app/components/Panel';
 
 export function SignalTraffic() {
   return (
-    <main className="max-w-4xl mx-auto px-4 py-12 font-mono text-[#fef9e8]">
+    <main className="max-w-4xl mx-auto px-4 pt-0 pb-12 font-mono text-[#fef9e8]">
       <div className="mb-8">
         <h1 className="text-3xl mb-2 tracking-[0.2em]">SIGNAL TRAFFIC</h1>
         <p className="text-sm">
