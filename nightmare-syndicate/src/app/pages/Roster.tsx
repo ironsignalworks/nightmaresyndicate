@@ -26,7 +26,9 @@ export function Roster() {
                   src={band.logo}
                   alt={`${band.name} insignia`}
                   className={`w-full object-contain ${
-                    band.id === 'vortex' ? 'max-w-[9.6rem]' : 'max-w-[12rem]'
+                    band.id === 'vortex' || band.id === 'nightmare-syndicate'
+                      ? 'max-w-[6.5rem]'
+                      : 'max-w-32'
                   }`}
                 />
               </div>

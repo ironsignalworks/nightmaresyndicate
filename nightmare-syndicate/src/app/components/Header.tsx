@@ -37,7 +37,7 @@ export function Header() {
             </div>
             <Link
               to="/login"
-              className="border border-[#7fd1ae]/40 px-4 py-2 text-xs uppercase tracking-[0.3em] text-center hover:bg-[#7fd1ae]/10 transition-colors"
+              className="folder-tab border border-[#7fd1ae]/40 px-4 py-2 text-xs uppercase tracking-[0.3em] text-center"
             >
               LOG IN
             </Link>

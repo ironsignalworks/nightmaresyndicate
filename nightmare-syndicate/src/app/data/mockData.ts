@@ -7,6 +7,7 @@ import hcwFront from '../../../img/psdw.png';
 import hcwBack from '../../../img/psde.png';
 import selvajariaLogo from '../../../img/selva1.png';
 import vortexLogo from '../../../img/vortex1.png';
+import falloutThumb from '../../../img/fallout1.png';
 
 export interface Band {
   id: string;
@@ -107,7 +108,7 @@ export const bands: Band[] = [
     classification: 'ALLY - DISTRIBUTION CELL',
     region: 'LISBOA, PT',
     summary:
-      'Vortex is an underground collective powering live shows and running stealth distribution routes across Lisbon. Tap into IG @vortex_associacao for coded drops. Contact: info@nightmaresyndicaterecords.com.',
+      'Vortex is an underground collective powering live shows and running stealth distribution routes across Lisbon. Tap into IG @vortex_associacao for coded drops. Contact: vortex.lisboa@gmail.com.',
     notes: [
       'Contact: vortex.lisboa@gmail.com',
       'Visit IG dispatches: @vortex_associacao (content self-destructs).',
@@ -117,18 +118,20 @@ export const bands: Band[] = [
   },
   {
     id: 'nightmare-syndicate',
-    name: 'NIGHTMARE SYNDICATE RECORDS',
+    name: 'FALLOUT ENGINEERING 2810',
     status: 'ACTIVE',
     classification: 'COMMAND NODE',
-    region: 'DIGITAL OP HUB',
+    region: 'ORANGE-GROVE77',
     summary:
-      'Umbrella entity responsible for cataloguing contaminated audio artifacts. Issues the NSR-series and coordinates allied operations.',
+      'THE NUKEFINDER GENERAL: Founder / Nuclear Executive Officer / Primary Vector for Nightmare Syndicate Records. A non-public operative tasked with locating, documenting, and distributing extreme audio artifacts recovered from cultural fallout zones.',
     notes: [
-      'Maintains black-site duplication facility with zero compliance oversight.',
-      'Playback equals consent. No refunds.',
-      'Currently leading Fatal Exposure containment/distribution.',
-      'Front-line email: info@nightmaresyndicaterecords.com',
+      'Active since the late 1990s across tape trading networks, illegal rehearsal spaces, noise cells, and micro-labels. Prioritizes raw signal integrity over genre, trend, or commercial viability.',
+      'Believed to have established Nightmare Syndicate Records as a decentralized archive rather than a traditional label. Releases are selected for hostility, urgency, and potential for permanent psychological damage.',
+      'Public appearances: none confirmed. Interviews: refused. Affiliations: undisclosed.',
+      'Operational doctrine: Document the collapse. Preserve the noise. Do not sanitize.',
+      'Status: ACTIVE. Location: REDACTED.',
     ],
+    logo: falloutThumb,
   },
 ];
 
@@ -182,7 +185,8 @@ Compliance is assumed. Playback constitutes consent.`,
       'https://www.youtube.com/watch?v=t0OVM-8ZTOw',
     ],
     releaseDate: '13 February 2026',
-    limitedNote: 'Limited to 300 contaminated copies. No repress scheduled.',
+    limitedNote:
+      'Limited to 300 contaminated copies. Includes the tour program fanzine and access to the classified video dossier. No repress scheduled.',
   },
   {
     id: 'nsr-02-intel',

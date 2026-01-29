@@ -49,10 +49,10 @@ export function BandDossier() {
               src={band.logo}
               alt={`${band.name} insignia`}
               className={`block w-full ${
-                band.id === 'vortex' ? 'max-w-lg' : 'max-w-xl'
+                band.id === 'vortex' || band.id === 'nightmare-syndicate' ? 'max-w-sm' : 'max-w-md'
               }`}
               imageClassName={`w-full object-contain ${
-                band.id === 'vortex' ? 'max-h-56' : 'max-h-64'
+                band.id === 'vortex' || band.id === 'nightmare-syndicate' ? 'max-h-40' : 'max-h-48'
               }`}
             />
           </div>
@@ -136,10 +136,15 @@ export function BandDossier() {
         )}
 
         {band.upcomingRelease && (
-          <div className="mb-6 border border-dashed border-[#7fd1ae]/30 p-4">
+          <div className="mb-6 border border-dashed border-[#7fd1ae]/30 p-4 space-y-2">
             <span className="text-xs text-[#7fd1ae] block mb-1">UPCOMING TRANSMISSION</span>
-            <p className="text-sm text-[#7fd1ae] font-bold">{band.upcomingRelease}</p>
-            <p className="text-xs text-[#7fd1ae] mt-1 uppercase tracking-[0.3em]">
+            <Link
+              to="/releases/nsr-04-hcw"
+              className="text-sm text-[#7fd1ae] font-bold underline underline-offset-2 hover:text-white transition-colors"
+            >
+              {band.upcomingRelease}
+            </Link>
+            <p className="text-xs text-[#7fd1ae] uppercase tracking-[0.3em]">
               VIDEOS - PROMOS - POSTERS INBOUND
             </p>
           </div>
