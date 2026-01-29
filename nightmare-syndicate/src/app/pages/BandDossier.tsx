@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { Panel } from '@/app/components/Panel';
 import { Stamp } from '@/app/components/Stamp';
+import { LightboxImage } from '@/app/components/LightboxImage';
 import { bands } from '@/app/data/mockData';
 
 export function BandDossier() {
@@ -20,9 +21,7 @@ export function BandDossier() {
     );
   }
 
-  const statusVariant = band.status.toUpperCase().includes('ACTIVE')
-    ? 'red'
-    : 'white';
+  const statusVariant = band.status.toUpperCase().includes('ACTIVE') ? 'red' : 'white';
 
   return (
     <main className="max-w-4xl mx-auto px-4 py-12">
@@ -41,11 +40,12 @@ export function BandDossier() {
         <h1 className="text-3xl mb-4">{band.name}</h1>
 
         {band.logo && (
-          <div className="mb-6">
-            <img
+          <div className="mb-6 flex justify-center">
+            <LightboxImage
               src={band.logo}
               alt={`${band.name} insignia`}
-              className="w-full max-h-64 object-contain border border-[#7fd1ae]/30 rounded bg-[#242422]/30 p-4"
+              className="block w-full max-w-md"
+              imageClassName="w-full max-h-64 object-contain border border-[#7fd1ae]/30 rounded bg-[#242422]/30 p-4"
             />
           </div>
         )}
@@ -55,7 +55,6 @@ export function BandDossier() {
             <span className="text-xs text-[#7fd1ae] block mb-1">CLASSIFICATION</span>
             <p className="text-sm">{band.classification}</p>
           </div>
-
           <div className="border-b border-[#7fd1ae]/30 pb-3">
             <span className="text-xs text-[#7fd1ae] block mb-1">REGION</span>
             <p className="text-sm">{band.region}</p>
@@ -67,22 +66,35 @@ export function BandDossier() {
           <p className="text-sm leading-relaxed">{band.summary}</p>
         </div>
 
+        {band.gallery && band.gallery.length > 0 && (
+          <div className="mb-8">
+            <h2 className="text-sm text-[#7fd1ae] mb-3">VISUAL FILES</h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {band.gallery.map((image, idx) => (
+                <LightboxImage
+                  key={`${image}-${idx}`}
+                  src={image}
+                  alt={`${band.name} bio asset ${idx + 1}`}
+                  className="block w-full aspect-video"
+                  imageClassName="h-full w-full object-cover border border-[#7fd1ae]/30 rounded"
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
         {band.upcomingRelease && (
           <div className="mb-6 border border-dashed border-[#7fd1ae]/30 p-4">
-            <span className="text-xs text-[#7fd1ae] block mb-1">
-              UPCOMING TRANSMISSION
-            </span>
-            <p className="text-sm text-[#7fd1ae] font-bold">
-              {band.upcomingRelease}
-            </p>
+            <span className="text-xs text-[#7fd1ae] block mb-1">UPCOMING TRANSMISSION</span>
+            <p className="text-sm text-[#7fd1ae] font-bold">{band.upcomingRelease}</p>
             <p className="text-xs text-[#7fd1ae] mt-1 uppercase tracking-[0.3em]">
-              VIDEOS · PROMOS · POSTERS INBOUND
+              VIDEOS - PROMOS - POSTERS INBOUND
             </p>
           </div>
         )}
 
         {band.bandcampUrl && (
-          <div className="mb-8">
+          <div className="mb-4">
             <a
               href={band.bandcampUrl}
               target="_blank"
@@ -94,12 +106,16 @@ export function BandDossier() {
           </div>
         )}
 
+        <p className="text-xs text-[#7fd1ae] mb-6">
+          Contact: <a href="mailto:info@nightmaresyndicaterecords.com" className="underline">info@nightmaresyndicaterecords.com</a>
+        </p>
+
         <div>
           <h2 className="text-sm text-[#7fd1ae] mb-3">DOSSIER NOTES</h2>
           <ul className="space-y-2">
             {band.notes.map((note, index) => (
               <li key={index} className="text-sm flex gap-3">
-                <span className="text-[#896000]">&bull;</span>
+                <span className="text-[#896000]">-</span>
                 <span>{note}</span>
               </li>
             ))}

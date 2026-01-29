@@ -13,7 +13,7 @@ export function Roster() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 gap-6 items-start">
         {bands.map((band) => (
           <Panel key={band.id}>
             <div className="mb-4 flex gap-2 flex-wrap">

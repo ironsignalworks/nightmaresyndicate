@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Panel } from '@/app/components/Panel';
 import { Stamp } from '@/app/components/Stamp';
 import { WarningBox } from '@/app/components/WarningBox';
+import { LightboxImage } from '@/app/components/LightboxImage';
 import { releases } from '@/app/data/mockData';
 
 export function ReleaseDetail() {
@@ -63,17 +64,19 @@ export function ReleaseDetail() {
         {(release.coverImage || release.backImage) && (
           <div className="grid md:grid-cols-2 gap-4 mb-8">
             {release.coverImage && (
-              <img
+              <LightboxImage
                 src={release.coverImage}
                 alt={`${release.title} cover art`}
-                className="w-full border border-[#7fd1ae]/30 object-cover rounded"
+                className="w-full"
+                imageClassName="object-cover border border-[#7fd1ae]/30 rounded"
               />
             )}
             {release.backImage && (
-              <img
+              <LightboxImage
                 src={release.backImage}
                 alt={`${release.title} back cover art`}
-                className="w-full border border-[#7fd1ae]/30 object-cover rounded"
+                className="w-full"
+                imageClassName="object-cover border border-[#7fd1ae]/30 rounded"
               />
             )}
           </div>
@@ -100,6 +103,57 @@ export function ReleaseDetail() {
           </div>
         </div>
 
+        {release.selvajariaUrl && (
+          <p className="text-xs text-[#7fd1ae] mb-8">
+            Selvajaria Records:{' '}
+            <a
+              href={release.selvajariaUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="underline"
+            >
+              selvajariarecords.com
+            </a>
+          </p>
+        )}
+
+        {release.videos && release.videos.length > 0 && (
+          <div className="mb-8">
+            <h2 className="text-sm text-[#7fd1ae] mb-3">VIDEO FILES</h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {release.videos.map((videoUrl) => {
+                const id = (() => {
+                  try {
+                    const parsed = new URL(videoUrl);
+                    if (parsed.hostname.includes('youtu.be')) {
+                      return parsed.pathname.replace('/', '');
+                    }
+                    if (parsed.searchParams.get('v')) {
+                      return parsed.searchParams.get('v');
+                    }
+                    const match = parsed.pathname.match(/\/embed\/(.+)$/);
+                    return match ? match[1] : null;
+                  } catch {
+                    return null;
+                  }
+                })();
+                if (!id) return null;
+                return (
+                  <div key={id} className="aspect-video border border-[#7fd1ae]/30 rounded overflow-hidden">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${id}`}
+                      title={`Video ${id}`}
+                      className="w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
         <WarningBox tag="[NOTICE]">
           LIMITED RUN. WHEN IT'S GONE, IT'S GONE. [REDACTED]
         </WarningBox>
@@ -121,6 +175,12 @@ export function ReleaseDetail() {
               VISIT BANDCAMP
             </a>
           )}
+          <p className="text-xs text-[#7fd1ae] text-center w-full">
+            Need intel?{' '}
+            <a href="mailto:info@nightmaresyndicaterecords.com" className="underline">
+              info@nightmaresyndicaterecords.com
+            </a>
+          </p>
         </div>
       </Panel>
     </main>

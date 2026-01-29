@@ -10,6 +10,10 @@ import { BandDossier } from '@/app/pages/BandDossier';
 import { ReleaseDetail } from '@/app/pages/ReleaseDetail';
 
 export default function App() {
+  const handleBackToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <Router>
       <div className="min-h-screen bg-transparent flex flex-col">
@@ -26,8 +30,22 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
-        <footer className="text-center text-xs tracking-[0.3em] uppercase text-[#7fd1ae] py-6">
-          nightmare syndicate records - all rights reserved - radiate and perish - info@nightmaresyndicaterecords.com
+        <button
+          type="button"
+          onClick={handleBackToTop}
+          className="mx-auto mb-2 flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-[#7fd1ae] hover:text-white transition-colors"
+          aria-label="Back to top"
+        >
+          <span aria-hidden="true">↑</span>
+          back to top
+        </button>
+        <footer className="text-xs tracking-[0.3em] uppercase text-[#7fd1ae] py-6 flex flex-col items-center gap-2 sm:flex-row sm:flex-wrap sm:justify-center">
+          <span>nightmare syndicate records</span>
+          <span>all rights reserved</span>
+          <span>radiate and perish</span>
+          <a href="mailto:info@nightmaresyndicaterecords.com" className="underline">
+            info@nightmaresyndicaterecords.com
+          </a>
         </footer>
       </div>
     </Router>

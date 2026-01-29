@@ -1,8 +1,10 @@
 import coverFront from '../../../img/cover_web.png';
 import coverBack from '../../../img/coverb1.png';
 import fatalLogo from '../../../img/ftxp_logo.png';
-import humanCrustFront from '../../../img/band1.webp';
-import humanCrustBack from '../../../img/band2.webp';
+import bandPhotoOne from '../../../img/band1.webp';
+import bandPhotoTwo from '../../../img/band2.webp';
+import hcwFront from '../../../img/psdw.png';
+import hcwBack from '../../../img/psde.png';
 
 export interface Band {
   id: string;
@@ -15,6 +17,7 @@ export interface Band {
   logo?: string;
   bandcampUrl?: string;
   upcomingRelease?: string;
+  gallery?: string[];
 }
 
 export interface Release {
@@ -30,6 +33,8 @@ export interface Release {
   coverImage?: string;
   backImage?: string;
   externalUrl?: string;
+  selvajariaUrl?: string;
+  videos?: string[];
 }
 
 export interface Dossier {
@@ -46,16 +51,19 @@ export const bands: Band[] = [
     classification: 'FTXP HEAVY YIELD OPS',
     region: 'SECTOR 19-X / ECHO FALLOUT GRID',
     summary:
-      'Sonic warfare cell specializing in D-beat radiation punk, metallic crust, and synth detonations. All output filed under "unauthorized transmissions."',
+      'Sonic warfare cell specializing in D-beat radiation punk, metallic crust, and synth detonations. Posters, tour briefs, and dossiers broadcast daily while they prep "The Human Crust of War" after the Bikini Atoll Broadcast detonation.',
     notes: [
       'Personnel: Major DD Nukes (drums/chaos engineering), Fukushima Baby Jones (bass/advanced sonic subterfuge), Cindy Cyanide (synths/mechanized warfare protocol), Obi War Chernobyl (vocals, guitars, barbed wire apocalypse revival).',
       'All sessions conducted under full contamination alert. No clean takes attempted.',
       'Deployment overseen by Nightmare Syndicate / Selvajaria / Vortex alliance.',
       'Last ping received from Sector 19-X. Retrieval efforts failed.',
+      'New LP "The Human Crust of War" incoming. Videos, promos, and posters staged across HOME > Field Promotion and intel drops.',
+      'Primary comms: info@nightmaresyndicaterecords.com / https://fatalexposure.bandcamp.com/.',
     ],
     logo: fatalLogo,
     bandcampUrl: 'https://fatalexposure.bandcamp.com/',
     upcomingRelease: 'The Human Crust of War',
+    gallery: [bandPhotoOne, bandPhotoTwo],
   },
   {
     id: 'selvajaria',
@@ -64,9 +72,10 @@ export const bands: Band[] = [
     classification: 'ALLY - DISTRIBUTION CELL',
     region: 'LISBON, PT',
     summary:
-      'Lisbon imprint entrusted with radiological punk logistics. Co-issued Bikini Atoll Broadcast. Specializes in low-profile shipments.',
+      'Lisbon imprint entrusted with radiological punk logistics. Co-issued Bikini Atoll Broadcast and routes mail-order fallout via selvajariarecords.com.',
     notes: [
       'Contact: selvajariarecords.pt@gmail.com',
+      'Web: https://www.selvajariarecords.com/',
       'Maintains encrypted drop points across EU.',
       'Reports directly to Nightmare Syndicate command when radioactive media requires clearance.',
     ],
@@ -78,9 +87,10 @@ export const bands: Band[] = [
     classification: 'ALLY - DISTRIBUTION CELL',
     region: 'LISBOA, PT',
     summary:
-      'Vortex is an underground collective powering live Nightmare Syndicate shows and running stealth distribution routes across Lisbon. Tap into IG @vortex.ops for coded drops.',
+      'Vortex is an underground collective powering live Nightmare Syndicate shows and running stealth distribution routes across Lisbon. Tap into IG @vortex_associacao for coded drops.',
     notes: [
       'Contact: vortex.lisboa@gmail.com',
+      'Visit IG dispatches: @vortex_associacao (content self-destructs).',
       'Hosts impromptu gigs in shielded basements; merch exchanged at the door.',
       'Posts encrypted dispatches via Instagram bursts, deleted within minutes.',
     ],
@@ -97,6 +107,7 @@ export const bands: Band[] = [
       'Maintains black-site duplication facility with zero compliance oversight.',
       'Playback equals consent. No refunds.',
       'Currently leading Fatal Exposure containment/distribution.',
+      'Front-line email: info@nightmaresyndicaterecords.com',
     ],
   },
 ];
@@ -143,6 +154,13 @@ Compliance is assumed. Playback constitutes consent.`,
     coverImage: coverFront,
     backImage: coverBack,
     externalUrl: 'https://fatalexposure.bandcamp.com/',
+    selvajariaUrl: 'https://www.selvajariarecords.com/',
+    videos: [
+      'https://www.youtube.com/watch?v=ylLR0TmE8f0',
+      'https://www.youtube.com/watch?v=JszqNBJozag',
+      'https://www.youtube.com/watch?v=Ro-oi2_KNi4',
+      'https://www.youtube.com/watch?v=t0OVM-8ZTOw',
+    ],
   },
   {
     id: 'nsr-02-intel',
@@ -170,17 +188,17 @@ Compliance is assumed. Playback constitutes consent.`,
   },
   {
     id: 'nsr-04-hcw',
-    catalogId: 'NSR-04-HCW',
+    catalogId: 'NSR-02-A1X-ROGUE',
     artist: 'FATAL EXPOSURE',
     title: 'THE HUMAN CRUST OF WAR',
-    format: 'LP / DIGITAL',
+    format: 'CD / LP / DIGITAL / CASSETTE',
     year: 2026,
     status: 'COMING SOON',
     tags: ['LP', 'FULL-LENGTH', 'FIELD REPORT', 'PRE-RELEASE'],
     description:
       'The Human Crust of War is the next escalation from Fatal Exposure: a wall of irradiated D-beat dirge tracked live inside an abandoned fallout shelter. Video transmissions, promo posters, and classified rehearsal tapes are feeding into the build-up now.',
-    coverImage: humanCrustFront,
-    backImage: humanCrustBack,
+    coverImage: hcwFront,
+    backImage: hcwBack,
     externalUrl: 'https://fatalexposure.bandcamp.com/',
   },
 ];

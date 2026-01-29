@@ -18,14 +18,14 @@ export function Header() {
       <div className="max-w-6xl mx-auto px-4 py-6">
         <div className="flex items-start justify-between mb-4 gap-6 flex-wrap">
           <div className="flex flex-col gap-2">
-            <img
-              src={headerLogo}
-              alt="Nightmare Syndicate"
-              className="w-48 md:w-64 object-contain"
-            />
-            <p className="text-sm text-[#7fd1ae] tracking-wider">
-              UNDERGROUND OPERATIONS / DISTRO CULTURE
-            </p>
+            <Link to="/" className="inline-block">
+              <img
+                src={headerLogo}
+                alt="Nightmare Syndicate"
+                className="w-48 md:w-64 object-contain"
+              />
+            </Link>
+            <p className="text-sm text-[#7fd1ae] tracking-wider">UNDERGROUND OPERATIONS</p>
           </div>
           <div className="border border-[#896000] px-3 py-1">
             <span className="text-xs text-[#896000] font-bold tracking-wider">

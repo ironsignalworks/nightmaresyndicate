@@ -35,10 +35,6 @@ export function Submit() {
             <span className="text-[#896000]">▪</span>
             <span>Previous releases or live documentation required</span>
           </li>
-          <li className="text-sm flex gap-3">
-            <span className="text-[#896000]">▪</span>
-            <span>No social media promotion or mainstream visibility</span>
-          </li>
         </ul>
 
         <WarningBox tag="[WARNING]">

@@ -19,7 +19,7 @@ export function Contact() {
           <div className="space-y-3 text-sm">
             <div className="border-b border-[#7fd1ae]/30 pb-3">
               <span className="text-xs text-[#7fd1ae] block mb-1">EMAIL</span>
-              <p className="font-mono">syndicate@[REDACTED].net</p>
+              <p className="font-mono">info@nightmaresyndicaterecords.com</p>
             </div>
 
             <div className="border-b border-[#7fd1ae]/30 pb-3">
@@ -42,7 +42,7 @@ export function Contact() {
           <div className="space-y-3 text-sm">
             <div className="border-b border-[#7fd1ae]/30 pb-3">
               <span className="text-xs text-[#7fd1ae] block mb-1">EMAIL</span>
-              <p className="font-mono">demos@[REDACTED].net</p>
+              <p className="font-mono">demos@nightmaresyndicaterecords.com</p>
             </div>
 
             <div className="border-b border-[#7fd1ae]/30 pb-3">
@@ -62,7 +62,7 @@ export function Contact() {
           <div className="space-y-3 text-sm">
             <div className="border-b border-[#7fd1ae]/30 pb-3">
               <span className="text-xs text-[#7fd1ae] block mb-1">EMAIL</span>
-              <p className="font-mono">distro@[REDACTED].net</p>
+              <p className="font-mono">distro@nightmaresyndicaterecords.com</p>
             </div>
 
             <div className="border-b border-[#7fd1ae]/30 pb-3">

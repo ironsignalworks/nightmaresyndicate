@@ -4,6 +4,11 @@ import { Stamp } from '@/app/components/Stamp';
 import { releases } from '@/app/data/mockData';
 
 export function Releases() {
+  const visibleReleases = releases.filter((release) => {
+    const normalized = release.status.toUpperCase();
+    return !normalized.includes('CLASSIFIED') && !normalized.includes('PRE-ORDER');
+  });
+
   return (
     <main className="max-w-6xl mx-auto px-4 py-12">
       <div className="mb-8">
@@ -13,12 +18,19 @@ export function Releases() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {releases.map((release) => (
-          <Panel key={release.id} className="flex flex-col">
-            <div className="mb-4">
-              <Stamp text={release.status} variant={release.status === 'AVAILABLE' ? 'white' : 'red'} />
-            </div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+        {visibleReleases.map((release) => {
+          const normalizedStatus = release.status.toUpperCase();
+          const variant =
+            normalizedStatus.includes('AVAILABLE') || normalizedStatus.includes('PRE-ORDER')
+              ? 'white'
+              : 'red';
+
+          return (
+            <Panel key={release.id} className="flex flex-col">
+              <div className="mb-4">
+                <Stamp text={release.status} variant={variant} />
+              </div>
 
             <div className="space-y-3 mb-6 flex-grow">
               <div className="border-b border-[#7fd1ae]/30 pb-2">
@@ -65,8 +77,9 @@ export function Releases() {
             >
               OPEN FILE
             </Link>
-          </Panel>
-        ))}
+            </Panel>
+          );
+        })}
       </div>
     </main>
   );
