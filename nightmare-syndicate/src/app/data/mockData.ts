@@ -5,6 +5,8 @@ import bandPhotoOne from '../../../img/band1.webp';
 import bandPhotoTwo from '../../../img/band2.webp';
 import hcwFront from '../../../img/psdw.png';
 import hcwBack from '../../../img/psde.png';
+import selvajariaLogo from '../../../img/selva1.png';
+import vortexLogo from '../../../img/vortex1.png';
 
 export interface Band {
   id: string;
@@ -18,6 +20,7 @@ export interface Band {
   bandcampUrl?: string;
   upcomingRelease?: string;
   gallery?: string[];
+  latestReleaseId?: string;
 }
 
 export interface Release {
@@ -77,6 +80,7 @@ export const bands: Band[] = [
     bandcampUrl: 'https://fatalexposure.bandcamp.com/',
     upcomingRelease: 'The Human Crust of War',
     gallery: [bandPhotoOne, bandPhotoTwo],
+    latestReleaseId: 'nsr-01-a1x-rogue',
   },
   {
     id: 'selvajaria',
@@ -92,6 +96,7 @@ export const bands: Band[] = [
       'Maintains encrypted drop points across EU.',
       'Reports directly to Nightmare Syndicate command when radioactive media requires clearance.',
     ],
+    logo: selvajariaLogo,
   },
   {
     id: 'vortex',
@@ -106,6 +111,7 @@ export const bands: Band[] = [
       'Visit IG dispatches: @vortex_associacao (content self-destructs).',
       'Hosts gigs in shielded basements; merch exchanged in situ.',
     ],
+    logo: vortexLogo,
   },
   {
     id: 'nightmare-syndicate',

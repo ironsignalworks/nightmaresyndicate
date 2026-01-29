@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Panel } from '@/app/components/Panel';
 import { Stamp } from '@/app/components/Stamp';
@@ -8,6 +9,10 @@ import { releases } from '@/app/data/mockData';
 export function ReleaseDetail() {
   const { id } = useParams();
   const release = releases.find((r) => r.id === id);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, [id]);
 
   if (!release) {
     return (

@@ -78,14 +78,13 @@ export function Contact() {
         </Panel>
 
         <WarningBox tag="[SECURITY NOTICE]">
-          DO NOT DISCLOSE LOCATIONS. DO NOT REQUEST PERSONAL MEETINGS. 
-          ALL OPERATIONS ARE CONDUCTED REMOTELY. PHYSICAL ADDRESS IS <RedactedText />.
+          DO NOT REQUEST PERSONAL MEETINGS. 
+          ALL OPERATIONS ARE CONDUCTED REMOTELY FROM OUR ORANGE-GROVE77 HEADQUARTERS. PHYSICAL ADDRESS IS <RedactedText />.
         </WarningBox>
 
         <Panel>
           <p className="text-xs text-white leading-relaxed">
-            NIGHTMARE SYNDICATE operates independently with no affiliations. 
-            We do not participate in social media, festivals, or public events. 
+            NIGHTMARE SYNDICATE RECORDS operates independently with no affiliations.
             All communication is conducted through encrypted channels. 
             Response is not guaranteed. Patience required.
           </p>

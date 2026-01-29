@@ -20,6 +20,17 @@ export function Roster() {
             </div>
 
             <h2 className="text-xl mb-4">{band.name}</h2>
+            {band.logo && (
+              <div className="mb-4 flex justify-start">
+                <img
+                  src={band.logo}
+                  alt={`${band.name} insignia`}
+                  className={`w-full object-contain ${
+                    band.id === 'vortex' ? 'max-w-[9.6rem]' : 'max-w-[12rem]'
+                  }`}
+                />
+              </div>
+            )}
 
             <div className="space-y-3 mb-4">
               <div className="border-b border-[#7fd1ae]/30 pb-2">

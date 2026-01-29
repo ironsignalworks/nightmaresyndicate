@@ -17,11 +17,11 @@ export function Submit() {
         <ul className="space-y-3 mb-8">
           <li className="text-sm flex gap-3">
             <span className="text-[#896000]">▪</span>
-            <span>Material must be extreme, uncompromising, and authentic</span>
+            <span>Material must be raw, uncompromising, and authentic</span>
           </li>
           <li className="text-sm flex gap-3">
             <span className="text-[#896000]">▪</span>
-            <span>No genre restrictions. Noise, hardcore, industrial, experimental accepted</span>
+            <span>No genre restrictions. Anything goes</span>
           </li>
           <li className="text-sm flex gap-3">
             <span className="text-[#896000]">▪</span>
@@ -38,7 +38,7 @@ export function Submit() {
         </ul>
 
         <WarningBox tag="[WARNING]">
-          IF IT SOUNDS SAFE, IT'S REJECTED.
+          IF IT SOUNDS LAME, WE DON'T WANT IT.
         </WarningBox>
       </Panel>
 

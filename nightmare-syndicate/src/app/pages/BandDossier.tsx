@@ -2,11 +2,15 @@ import { useParams, Link } from 'react-router-dom';
 import { Panel } from '@/app/components/Panel';
 import { Stamp } from '@/app/components/Stamp';
 import { LightboxImage } from '@/app/components/LightboxImage';
-import { bands } from '@/app/data/mockData';
+import { bands, releases } from '@/app/data/mockData';
 
 export function BandDossier() {
   const { id } = useParams();
   const band = bands.find((b) => b.id === id);
+  const latestRelease =
+    band?.latestReleaseId != null
+      ? releases.find((release) => release.id === band.latestReleaseId)
+      : undefined;
 
   if (!band) {
     return (
@@ -40,12 +44,16 @@ export function BandDossier() {
         <h1 className="text-3xl mb-4">{band.name}</h1>
 
         {band.logo && (
-          <div className="mb-6 flex justify-center">
+          <div className="mb-6 flex justify-start">
             <LightboxImage
               src={band.logo}
               alt={`${band.name} insignia`}
-              className="block w-full max-w-md"
-              imageClassName="w-full max-h-64 object-contain"
+              className={`block w-full ${
+                band.id === 'vortex' ? 'max-w-lg' : 'max-w-xl'
+              }`}
+              imageClassName={`w-full object-contain ${
+                band.id === 'vortex' ? 'max-h-56' : 'max-h-64'
+              }`}
             />
           </div>
         )}
@@ -79,6 +87,47 @@ export function BandDossier() {
                   imageClassName="h-full w-full object-cover border border-[#7fd1ae]/30 rounded"
                 />
               ))}
+            </div>
+          </div>
+        )}
+
+        {latestRelease && (
+          <div className="mb-6 border border-[#7fd1ae]/40 p-4 space-y-2">
+            <span className="text-xs text-[#7fd1ae] block uppercase tracking-[0.3em]">
+              LATEST RELEASE // {latestRelease.status}
+            </span>
+            <Link
+              to={`/releases/${latestRelease.id}`}
+              className="text-lg text-white font-bold leading-tight hover:text-[#7fd1ae] transition-colors"
+            >
+              {latestRelease.title}
+            </Link>
+            <p className="text-sm text-[#7fd1ae]">
+              {latestRelease.catalogId} · {latestRelease.year}
+            </p>
+            <p className="text-xs text-white">{latestRelease.format}</p>
+            <p className="text-sm text-white leading-relaxed">
+              Fatal Exposure&apos;s Bikini Atoll Broadcast detonation remains the current dossier:
+              eleven tracks sourced from the Sector 19-X blast radius, limited to 300 units and routed
+              jointly by Selvajaria, Vortex, and Nightmare Syndicate Records.
+            </p>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <Link
+                to={`/releases/${latestRelease.id}`}
+                className="border border-[#878785] px-4 py-2 text-xs uppercase tracking-[0.3em] text-center hover:bg-[#878785] hover:text-[#7fd1ae] transition-colors"
+              >
+                OPEN RELEASE FILE
+              </Link>
+              {latestRelease.externalUrl && (
+                <a
+                  href={latestRelease.externalUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="border border-[#7fd1ae]/50 px-4 py-2 text-xs uppercase tracking-[0.3em] text-center hover:bg-[#7fd1ae]/10 transition-colors"
+                >
+                  BANDCAMP
+                </a>
+              )}
             </div>
           </div>
         )}
