@@ -1,6 +1,6 @@
 export function RedactedText() {
   return (
-    <span className="inline-block bg-[#878785] text-[#878785] px-2 select-none">
+    <span className="inline-block bg-black text-black px-2 select-none tracking-[0.3em] uppercase text-[0.65rem]">
       REDACTED
     </span>
   );

@@ -4,9 +4,13 @@ import { WarningBox } from '@/app/components/WarningBox';
 import { Stamp } from '@/app/components/Stamp';
 import { RedactedText } from '@/app/components/RedactedText';
 import { releases } from '@/app/data/mockData';
+import tourPoster from '../../../img/poster1.png';
 
 export function Home() {
-  const latestRelease = releases[3]; // NS-004
+  const latestRelease = releases[0];
+  const upcomingRelease = releases.find((r) =>
+    r.title.toLowerCase().includes('human crust of war'),
+  );
 
   return (
     <main className="max-w-6xl mx-auto px-4 py-12">
@@ -90,6 +94,64 @@ export function Home() {
           </Link>
         </Panel>
       </div>
+
+      {upcomingRelease && (
+        <div className="mt-10 grid lg:grid-cols-[1.5fr_1fr] gap-6">
+          <Panel>
+            <div className="flex items-center gap-2 mb-4">
+              <Stamp text="INCOMING TRANSMISSION" />
+              <span className="text-xs text-[#7fd1ae] uppercase tracking-[0.3em]">
+                videos · promos · posters
+              </span>
+            </div>
+            <h3 className="text-xl mb-2">{upcomingRelease.title}</h3>
+            <p className="text-sm text-[#7fd1ae] mb-4">
+              Fatal Exposure are finalizing the assault titled{' '}
+              <span className="font-bold">"{upcomingRelease.title}"</span>. Expect
+              bio film, live videos, promo dumps, and poster drops as we cycle
+              toward launch.
+            </p>
+            <ul className="text-sm text-[#7fd1ae] space-y-2 mb-6">
+              <li>• Tour visuals and poster proofs updated daily.</li>
+              <li>• Email intel: info@nightmaresyndicaterecords.com.</li>
+              <li>• Secure streams via Bandcamp ahead of street date.</li>
+            </ul>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                to={`/releases/${upcomingRelease.id}`}
+                className="border border-[#896000] px-4 py-2 text-sm hover:bg-[#896000] hover:text-[#7fd1ae] transition-colors"
+              >
+                READ DOSSIER
+              </Link>
+              <a
+                href="https://fatalexposure.bandcamp.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="border border-[#7fd1ae]/40 px-4 py-2 text-sm hover:bg-[#7fd1ae]/10 transition-colors"
+              >
+                BANDCAMP
+              </a>
+              <a
+                href="mailto:info@nightmaresyndicaterecords.com"
+                className="border border-[#7fd1ae]/40 px-4 py-2 text-sm hover:bg-[#7fd1ae]/10 transition-colors"
+              >
+                EMAIL HQ
+              </a>
+            </div>
+          </Panel>
+
+          <div className="border border-[#7fd1ae]/30 bg-[#242422]/40 p-4 flex flex-col gap-3">
+            <img
+              src={tourPoster}
+              alt="Fatal Exposure promo poster"
+              className="w-full object-cover rounded"
+            />
+            <p className="text-xs text-[#7fd1ae] uppercase tracking-[0.3em] text-center">
+              promo poster · tour broadcast assets
+            </p>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

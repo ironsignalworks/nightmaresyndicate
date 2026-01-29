@@ -21,18 +21,23 @@ export function ReleaseDetail() {
     );
   }
 
+  const normalizedStatus = release.status.toUpperCase();
+  const isAvailable =
+    normalizedStatus.includes('AVAILABLE') ||
+    normalizedStatus.includes('PRE-ORDER');
+
   return (
     <main className="max-w-4xl mx-auto px-4 py-12">
       <Link
         to="/releases"
         className="text-sm text-[#7fd1ae] hover:text-[#878785] mb-6 inline-block"
       >
-        ← BACK TO RELEASES
+        &larr; BACK TO RELEASES
       </Link>
 
       <Panel>
         <div className="mb-6">
-          <Stamp text={release.status} variant={release.status === 'AVAILABLE' ? 'white' : 'red'} />
+          <Stamp text={release.status} variant={isAvailable ? 'white' : 'red'} />
         </div>
 
         <h1 className="text-2xl mb-2">{release.title}</h1>
@@ -55,9 +60,30 @@ export function ReleaseDetail() {
           </div>
         </div>
 
+        {(release.coverImage || release.backImage) && (
+          <div className="grid md:grid-cols-2 gap-4 mb-8">
+            {release.coverImage && (
+              <img
+                src={release.coverImage}
+                alt={`${release.title} cover art`}
+                className="w-full border border-[#7fd1ae]/30 object-cover rounded"
+              />
+            )}
+            {release.backImage && (
+              <img
+                src={release.backImage}
+                alt={`${release.title} back cover art`}
+                className="w-full border border-[#7fd1ae]/30 object-cover rounded"
+              />
+            )}
+          </div>
+        )}
+
         <div className="mb-8">
           <h2 className="text-sm text-[#7fd1ae] mb-3">DESCRIPTION</h2>
-          <p className="text-sm leading-relaxed">{release.description}</p>
+          <p className="text-sm leading-relaxed whitespace-pre-line">
+            {release.description}
+          </p>
         </div>
 
         <div className="mb-8">
@@ -78,13 +104,24 @@ export function ReleaseDetail() {
           LIMITED RUN. WHEN IT'S GONE, IT'S GONE. [REDACTED]
         </WarningBox>
 
-        {release.status === 'AVAILABLE' && (
-          <div className="mt-6">
+        <div className="mt-6 flex flex-col gap-3">
+          {isAvailable && (
             <button className="w-full border border-[#896000] px-6 py-3 text-sm hover:bg-[#896000] hover:text-[#7fd1ae] transition-colors">
               ACQUIRE [CONTACT REQUIRED]
             </button>
-          </div>
-        )}
+          )}
+
+          {release.externalUrl && (
+            <a
+              href={release.externalUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="w-full border border-[#7fd1ae]/50 px-6 py-3 text-center text-sm hover:bg-[#7fd1ae]/10 transition-colors"
+            >
+              VISIT BANDCAMP
+            </a>
+          )}
+        </div>
       </Panel>
     </main>
   );
