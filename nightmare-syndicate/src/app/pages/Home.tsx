@@ -112,11 +112,11 @@ export function Home() {
         <h2 className="text-2xl mb-6 tracking-tight">
           OFFICIAL RECORD OF UNOFFICIAL RELEASES
         </h2>
-        <p className="text-sm text-[#7fd1ae] mb-6 leading-relaxed">
+        <p className="text-sm text-white mb-6 leading-relaxed">
           NIGHTMARE SYNDICATE RECORDS operates outside conventional music industry structures. We
           document, preserve, and distribute irradiated underground music transmissions.
         </p>
-        <p className="text-xs text-[#7fd1ae] mb-6">
+        <p className="text-xs text-white mb-6">
           Intel line:{' '}
           <a href="mailto:info@nightmaresyndicaterecords.com" className="underline">
             info@nightmaresyndicaterecords.com
@@ -148,7 +148,7 @@ export function Home() {
             release={latestRelease}
             stampText="LATEST RELEASE"
             footerNote={
-              <div className="text-xs text-[#7fd1ae] space-y-1">
+              <div className="text-xs text-white space-y-1">
                 {latestRelease.selvajariaUrl && (
                   <p>
                     Distribution partner:{' '}
@@ -187,12 +187,12 @@ export function Home() {
             stampText="INCOMING TRANSMISSION"
             bodyCopy={
               <>
-                <p className="text-sm text-[#7fd1ae] leading-relaxed">
+                <p className="text-sm text-white leading-relaxed">
                   Fatal Exposure are finalizing the assault titled{' '}
                   <span className="font-bold">{upcomingRelease.title}</span>. Expect bio film, live videos,
                   promo dumps, poster drops, and dossier leaks as we cycle toward launch.
                 </p>
-                <ul className="text-sm text-[#7fd1ae] space-y-2">
+                <ul className="text-sm text-white space-y-2">
                   <li>- Tour visuals and poster proofs updated daily.</li>
                   <li>- Intel dropbox: info@nightmaresyndicaterecords.com.</li>
                   <li>- Secure streams via Bandcamp ahead of street date.</li>
@@ -247,7 +247,7 @@ export function Home() {
         <div className="p-6 flex flex-col gap-3 bg-[#242422]/40">
           <Stamp text="FIELD PROMOTION" />
           <h2 className="text-2xl">POSTERS - TOURS - BROADCAST SIGNALS</h2>
-          <p className="text-sm text-[#7fd1ae] leading-relaxed">
+          <p className="text-sm text-white leading-relaxed">
             Fatal Exposure propaganda posters, live video stills, and promo blasts are rolling out daily.
             Watch the channels for new dates, location leaks, and classified screenings.
           </p>

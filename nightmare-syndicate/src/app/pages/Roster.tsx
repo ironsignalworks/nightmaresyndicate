@@ -8,7 +8,7 @@ export function Roster() {
     <main className="max-w-6xl mx-auto px-4 py-12">
       <div className="mb-8">
         <h1 className="text-3xl mb-2">ROSTER</h1>
-        <p className="text-sm text-[#7fd1ae]">CURRENT OPERATIONS AND AFFILIATED UNITS</p>
+        <p className="text-sm text-white">CURRENT OPERATIONS AND AFFILIATED UNITS</p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6 items-stretch">
@@ -32,7 +32,7 @@ export function Roster() {
               </div>
             </div>
 
-            <p className="text-sm text-[#7fd1ae] leading-relaxed flex-grow">{band.summary}</p>
+            <p className="text-sm text-white leading-relaxed flex-grow">{band.summary}</p>
 
             <Link
               to={`/roster/${band.id}`}

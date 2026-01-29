@@ -23,9 +23,6 @@ export function LightboxImage({
         className={`relative overflow-hidden focus:outline-none ${className}`}
       >
         <img src={src} alt={alt} className={`w-full ${imageClassName}`} />
-        <span className="absolute bottom-2 right-2 bg-black/70 text-white text-[10px] px-2 py-1 tracking-[0.3em] uppercase">
-          zoom
-        </span>
       </button>
       {open && (
         <div

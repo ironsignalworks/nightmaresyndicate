@@ -10,7 +10,7 @@ export function WarningBox({ children, tag = '[REDACTED]' }: WarningBoxProps) {
         <span className="bg-black text-[#7fd1ae] text-[10px] font-bold shrink-0 px-2 py-1 uppercase tracking-[0.3em] border border-[#7fd1ae]/20">
           {tag}
         </span>
-        <div className="text-sm text-[#7fd1ae]">{children}</div>
+        <div className="text-sm text-white">{children}</div>
       </div>
     </div>
   );

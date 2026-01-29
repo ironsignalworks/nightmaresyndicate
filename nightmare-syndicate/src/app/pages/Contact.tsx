@@ -7,7 +7,7 @@ export function Contact() {
     <main className="max-w-4xl mx-auto px-4 py-12">
       <div className="mb-8">
         <h1 className="text-3xl mb-2">CONTACT</h1>
-        <p className="text-sm text-[#7fd1ae]">
+        <p className="text-sm text-white">
           COMMUNICATION CHANNELS
         </p>
       </div>
@@ -42,7 +42,7 @@ export function Contact() {
           <div className="space-y-3 text-sm">
             <div className="border-b border-[#7fd1ae]/30 pb-3">
               <span className="text-xs text-[#7fd1ae] block mb-1">EMAIL</span>
-              <p className="font-mono">demos@nightmaresyndicaterecords.com</p>
+              <p className="font-mono">info@nightmaresyndicaterecords.com</p>
             </div>
 
             <div className="border-b border-[#7fd1ae]/30 pb-3">
@@ -50,7 +50,7 @@ export function Contact() {
               <p>Encrypted attachments only. Max 50MB.</p>
             </div>
 
-            <p className="text-[#7fd1ae]">
+            <p className="text-white">
               See SUBMIT page for full requirements.
             </p>
           </div>
@@ -62,7 +62,7 @@ export function Contact() {
           <div className="space-y-3 text-sm">
             <div className="border-b border-[#7fd1ae]/30 pb-3">
               <span className="text-xs text-[#7fd1ae] block mb-1">EMAIL</span>
-              <p className="font-mono">distro@nightmaresyndicaterecords.com</p>
+              <p className="font-mono">info@nightmaresyndicaterecords.com</p>
             </div>
 
             <div className="border-b border-[#7fd1ae]/30 pb-3">
@@ -83,7 +83,7 @@ export function Contact() {
         </WarningBox>
 
         <Panel>
-          <p className="text-xs text-[#7fd1ae] leading-relaxed">
+          <p className="text-xs text-white leading-relaxed">
             NIGHTMARE SYNDICATE operates independently with no affiliations. 
             We do not participate in social media, festivals, or public events. 
             All communication is conducted through encrypted channels. 

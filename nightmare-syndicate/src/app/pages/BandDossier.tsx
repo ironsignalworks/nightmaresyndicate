@@ -27,7 +27,7 @@ export function BandDossier() {
     <main className="max-w-4xl mx-auto px-4 py-12">
       <Link
         to="/roster"
-        className="text-sm text-[#7fd1ae] hover:text-[#878785] mb-6 inline-block"
+        className="text-sm text-white hover:text-[#878785] mb-6 inline-block"
       >
         &larr; BACK TO ROSTER
       </Link>
@@ -106,7 +106,7 @@ export function BandDossier() {
           </div>
         )}
 
-        <p className="text-xs text-[#7fd1ae] mb-6">
+        <p className="text-xs text-white mb-6">
           Contact: <a href="mailto:info@nightmaresyndicaterecords.com" className="underline">info@nightmaresyndicaterecords.com</a>
         </p>
 

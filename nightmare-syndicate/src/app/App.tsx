@@ -33,13 +33,13 @@ export default function App() {
         <button
           type="button"
           onClick={handleBackToTop}
-          className="mx-auto mb-2 flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-[#7fd1ae] hover:text-white transition-colors"
+          className="mx-auto mb-2 flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-white hover:text-[#7fd1ae] transition-colors"
           aria-label="Back to top"
         >
           <span aria-hidden="true">↑</span>
           back to top
         </button>
-        <footer className="text-xs tracking-[0.3em] uppercase text-[#7fd1ae] py-6 flex flex-col items-center gap-2 sm:flex-row sm:flex-wrap sm:justify-center">
+        <footer className="subtitle-font text-xs tracking-[0.3em] uppercase text-white py-6 flex flex-col items-center gap-2 sm:flex-row sm:flex-wrap sm:justify-center">
           <span>nightmare syndicate records</span>
           <span>all rights reserved</span>
           <span>radiate and perish</span>

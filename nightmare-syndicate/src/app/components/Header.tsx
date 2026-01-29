@@ -25,7 +25,9 @@ export function Header() {
                 className="w-48 md:w-64 object-contain"
               />
             </Link>
-            <p className="text-sm text-[#7fd1ae] tracking-wider">UNDERGROUND OPERATIONS</p>
+            <p className="text-sm subtitle-font tracking-wide text-[#7fd1ae]">
+              CAME FOR THE RIFFS, STAYED FOR THE RADIATION
+            </p>
           </div>
           <div className="border border-[#896000] px-3 py-1">
             <span className="text-xs text-[#896000] font-bold tracking-wider">

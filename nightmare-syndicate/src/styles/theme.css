@@ -37,4 +37,18 @@
     letter-spacing: 0.05em;
   }
 
+  .stencil-font {
+    font-family: 'Black Ops One', 'Impact', sans-serif;
+  }
+
+  .subtitle-font {
+    font-family: 'Special Elite', 'Courier New', monospace;
+    letter-spacing: 0.05em;
+  }
+
+  [class~="text-xs"] {
+    font-family: 'Special Elite', 'Courier New', monospace;
+    letter-spacing: 0.05em;
+  }
+
 }

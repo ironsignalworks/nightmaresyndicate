@@ -6,7 +6,7 @@ export function Submit() {
     <main className="max-w-4xl mx-auto px-4 py-12">
       <div className="mb-8">
         <h1 className="text-3xl mb-2">SUBMIT</h1>
-        <p className="text-sm text-[#7fd1ae]">
+        <p className="text-sm text-white">
           MATERIAL SUBMISSION PROTOCOL
         </p>
       </div>
@@ -51,7 +51,7 @@ export function Submit() {
             Public submissions are not accepted.
           </p>
 
-          <p className="text-[#7fd1ae]">
+          <p className="text-white">
             Contact information available through [REDACTED] networks only.
             Clearance verification required.
           </p>
