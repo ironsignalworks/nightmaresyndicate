@@ -11,7 +11,7 @@ export function ReleaseDetail() {
 
   if (!release) {
     return (
-      <main className="max-w-6xl mx-auto px-4 py-12">
+      <main className="max-w-6xl mx-auto px-4 pt-0 pb-12">
         <Panel>
           <p>FILE NOT FOUND</p>
           <Link to="/releases" className="text-[#896000] hover:underline">
@@ -28,7 +28,7 @@ export function ReleaseDetail() {
     normalizedStatus.includes('PRE-ORDER');
 
   return (
-    <main className="max-w-4xl mx-auto px-4 py-12">
+    <main className="max-w-4xl mx-auto px-4 pt-0 pb-12">
       <Link
         to="/releases"
         className="text-sm text-white hover:text-[#878785] mb-6 inline-block"

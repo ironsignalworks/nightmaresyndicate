@@ -40,8 +40,9 @@ export default function App() {
           back to top
         </button>
         <footer className="subtitle-font text-xs tracking-[0.3em] uppercase text-[#7fd1ae] py-6 flex flex-col items-center gap-2 sm:flex-row sm:flex-wrap sm:justify-center">
-          <span>nightmare syndicate records.</span>
-          <span>radiate and perish.</span>
+          <span>nightmare syndicate records</span>
+          <span>all rights reserved</span>
+          <span>radiate and perish</span>
           <a href="mailto:info@nightmaresyndicaterecords.com" className="underline">
             info@nightmaresyndicaterecords.com
           </a>

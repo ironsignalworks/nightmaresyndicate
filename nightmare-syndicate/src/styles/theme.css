@@ -51,4 +51,50 @@
     letter-spacing: 0.05em;
   }
 
+  .folder-rail {
+    position: relative;
+    padding-top: 0.75rem;
+  }
+
+  .folder-rail__tabs {
+    position: relative;
+    z-index: 2;
+  }
+
+  .folder-tab {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.4rem 0.4rem;
+    border: 1px solid rgba(127, 209, 174, 0.2);
+    border-bottom: none;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 0.7rem;
+    color: #7fd1ae;
+    background: linear-gradient(180deg, rgba(36, 36, 34, 0.95) 0%, rgba(36, 36, 34, 0.6) 100%);
+    text-decoration: none;
+    transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    clip-path: polygon(12px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 25%);
+    isolation: isolate;
+  }
+
+  .folder-tab::after {
+    content: none;
+  }
+
+  .folder-tab:not(.folder-tab--active):hover {
+    background: linear-gradient(180deg, rgba(135, 135, 133, 0.8) 0%, rgba(36, 36, 34, 0.8) 100%);
+    color: #fef9e8;
+  }
+
+  .folder-tab--active {
+    background: linear-gradient(180deg, #896000 0%, rgba(137, 96, 0, 0.75) 100%);
+    border-color: #896000;
+    color: #7fd1ae;
+    box-shadow: 0 4px 0 rgba(137, 96, 0, 0.5);
+  }
+
 }

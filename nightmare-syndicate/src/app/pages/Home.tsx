@@ -107,7 +107,7 @@ export function Home() {
       .slice(0, 2) ?? [];
 
   return (
-    <main className="max-w-6xl mx-auto px-4 py-12">
+    <main className="max-w-6xl mx-auto px-4 pt-0 pb-12">
       <Panel className="mb-10">
         <h2 className="text-2xl mb-6 tracking-tight">
           OFFICIAL RECORD OF UNOFFICIAL RELEASES

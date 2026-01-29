@@ -3,7 +3,7 @@ import { WarningBox } from '@/app/components/WarningBox';
 
 export function Submit() {
   return (
-    <main className="max-w-4xl mx-auto px-4 py-12">
+    <main className="max-w-4xl mx-auto px-4 pt-0 pb-12">
       <div className="mb-8">
         <h1 className="text-3xl mb-2">SUBMIT</h1>
         <p className="text-sm text-white">

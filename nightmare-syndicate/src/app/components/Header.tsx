@@ -36,21 +36,23 @@ export function Header() {
           </div>
         </div>
 
-        <nav className="flex gap-2 flex-wrap">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`border border-[#7fd1ae]/30 px-4 py-2 text-sm transition-colors ${
-                location.pathname === link.path
-                  ? 'bg-[#896000]/10 border-[#896000] text-[#896000]'
-                  : 'hover:border-[#878785] hover:bg-[#878785d9]'
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        <div className="folder-rail mt-3">
+          <nav className="folder-rail__tabs flex gap-2 flex-wrap items-end">
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`folder-tab ${isActive ? 'folder-tab--active' : ''}`}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
       </div>
     </header>
   );
