@@ -26,7 +26,7 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
-        <footer className="text-center text-xs tracking-[0.3em] uppercase text-[#7fd1ae] py-6">
+        <footer className="text-center text-xs tracking-[0.3em] uppercase text-[#7fd1ae] bg-[#242422]/70 py-6">
           nightmare syndicate records - all rights reserved - radiate and perish
         </footer>
       </div>
