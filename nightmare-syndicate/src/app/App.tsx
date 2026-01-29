@@ -15,7 +15,7 @@ export default function App() {
   };
 
   return (
-    <Router>
+    <Router basename="/nightmaresyndicate">
       <div className="min-h-screen bg-transparent flex flex-col">
         <Header />
         <div className="flex-1">
