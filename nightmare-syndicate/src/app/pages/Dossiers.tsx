@@ -12,7 +12,7 @@ export function Dossiers() {
   return (
     <main className="max-w-6xl mx-auto px-4 pt-0 pb-12 text-[#fef9e8] subtitle-font">
       <div className="mb-8">
-        <h1 className="text-3xl mb-2 tracking-[0.2em] uppercase stencil-font">
+        <h1 className="text-3xl mb-2 tracking-[0.1em] uppercase stencil-font">
           DOSSIERS
         </h1>
         <p className="text-sm text-[#fef9e8] subtitle-font">

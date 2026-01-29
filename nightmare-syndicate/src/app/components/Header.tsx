@@ -8,6 +8,7 @@ export function Header() {
     { path: '/', label: 'HOME' },
     { path: '/roster', label: 'ROSTER' },
     { path: '/releases', label: 'RELEASES' },
+    { path: '/merch', label: 'MERCH' },
     { path: '/dossiers', label: 'DOSSIERS' },
     { path: '/submit', label: 'SUBMIT' },
     { path: '/contact', label: 'CONTACT' },

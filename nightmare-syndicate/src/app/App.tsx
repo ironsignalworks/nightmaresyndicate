@@ -9,6 +9,7 @@ import { Contact } from '@/app/pages/Contact';
 import { BandDossier } from '@/app/pages/BandDossier';
 import { ReleaseDetail } from '@/app/pages/ReleaseDetail';
 import { Login } from '@/app/pages/Login';
+import { Merch } from '@/app/pages/Merch';
 
 export default function App() {
   const handleBackToTop = () => {
@@ -26,6 +27,7 @@ export default function App() {
             <Route path="/roster/:id" element={<BandDossier />} />
             <Route path="/releases" element={<Releases />} />
             <Route path="/releases/:id" element={<ReleaseDetail />} />
+            <Route path="/merch" element={<Merch />} />
             <Route path="/dossiers" element={<Dossiers />} />
             <Route path="/submit" element={<Submit />} />
             <Route path="/contact" element={<Contact />} />
