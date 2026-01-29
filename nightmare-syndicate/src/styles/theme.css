@@ -1,0 +1,52 @@
+@layer base {
+  :root {
+    --color-bg-dark: #0b0c0f;
+    --color-bg-panel: #11131a;
+    --color-text-primary: #e9e9ea;
+    --color-text-secondary: #8a8a8c;
+    --color-accent: #ff2b2b;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Space Mono', monospace;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    position: relative;
+  }
+
+  /* Faded background image */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: url('../../img/3500.webp');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    z-index: 0;
+    mix-blend-mode: screen;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+  }
+
+  button {
+    font-family: 'Space Mono', monospace;
+  }
+
+  body #root {
+    position: relative;
+    z-index: 1;
+  }
+}
