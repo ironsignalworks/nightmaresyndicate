@@ -14,7 +14,7 @@ export function Header() {
   ];
 
   return (
-    <header className="border-b border-[#8a8a8c]/30">
+    <header>
       <div className="max-w-6xl mx-auto px-4 py-6">
         <div className="flex items-start justify-between mb-4 gap-6 flex-wrap">
           <div className="flex flex-col gap-2">
@@ -23,12 +23,12 @@ export function Header() {
               alt="Nightmare Syndicate"
               className="w-48 md:w-64 object-contain"
             />
-            <p className="text-sm text-[#8a8a8c] tracking-wider">
+            <p className="text-sm text-[#7fd1ae] tracking-wider">
               UNDERGROUND OPERATIONS / DISTRO CULTURE
             </p>
           </div>
-          <div className="border border-[#ff2b2b] px-3 py-1">
-            <span className="text-xs text-[#ff2b2b] font-bold tracking-wider">
+          <div className="border border-[#896000] px-3 py-1">
+            <span className="text-xs text-[#896000] font-bold tracking-wider">
               CLASSIFICATION: REDACTED
             </span>
           </div>
@@ -39,10 +39,10 @@ export function Header() {
             <Link
               key={link.path}
               to={link.path}
-              className={`border border-[#8a8a8c]/30 px-4 py-2 text-sm transition-colors ${
+              className={`border border-[#7fd1ae]/30 px-4 py-2 text-sm transition-colors ${
                 location.pathname === link.path
-                  ? 'bg-[#ff2b2b]/10 border-[#ff2b2b] text-[#ff2b2b]'
-                  : 'hover:border-[#e9e9ea] hover:bg-[#11131a]'
+                  ? 'bg-[#896000]/10 border-[#896000] text-[#896000]'
+                  : 'hover:border-[#878785] hover:bg-[#878785d9]'
               }`}
             >
               {link.label}

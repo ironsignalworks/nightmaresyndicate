@@ -8,8 +8,8 @@ export function Stamp({ text, variant = 'red' }: StampProps) {
     <div
       className={`inline-block border px-3 py-1 ${
         variant === 'red'
-          ? 'border-[#ff2b2b] text-[#ff2b2b]'
-          : 'border-[#e9e9ea] text-[#e9e9ea]'
+          ? 'border-[#896000] text-[#896000]'
+          : 'border-[#878785] text-[#878785]'
       }`}
     >
       <span className="text-xs font-bold tracking-wider">{text}</span>

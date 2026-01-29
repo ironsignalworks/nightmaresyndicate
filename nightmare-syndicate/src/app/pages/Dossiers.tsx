@@ -6,7 +6,7 @@ export function Dossiers() {
     <main className="max-w-4xl mx-auto px-4 py-12">
       <div className="mb-8">
         <h1 className="text-3xl mb-2">DOSSIERS</h1>
-        <p className="text-sm text-[#8a8a8c]">
+        <p className="text-sm text-[#7fd1ae]">
           CLASSIFIED INTELLIGENCE LOGS AND INTERCEPTS
         </p>
       </div>
@@ -16,10 +16,10 @@ export function Dossiers() {
           {dossiers.map((dossier) => (
             <div
               key={dossier.id}
-              className="border-b border-[#8a8a8c]/20 py-3 hover:bg-[#0b0c0f]/30 px-3 -mx-3 cursor-pointer transition-colors"
+              className="border-b border-[#7fd1ae]/20 py-3 hover:bg-[#7fd1ae]/30 px-3 -mx-3 cursor-pointer transition-colors"
             >
               <div className="flex items-center gap-4">
-                <span className="text-[#ff2b2b] text-xs font-bold shrink-0">
+                <span className="text-[#896000] text-xs font-bold shrink-0">
                   {dossier.tag}
                 </span>
                 <p className="text-sm">{dossier.title}</p>
@@ -28,8 +28,8 @@ export function Dossiers() {
           ))}
         </div>
 
-        <div className="mt-8 pt-6 border-t border-[#8a8a8c]/30">
-          <p className="text-xs text-[#8a8a8c]">
+        <div className="mt-8 pt-6 border-t border-[#7fd1ae]/30">
+          <p className="text-xs text-[#7fd1ae]">
             ACCESS TO FULL DOSSIER CONTENT REQUIRES CLEARANCE. 
             UNAUTHORIZED VIEWING IS PROHIBITED.
           </p>

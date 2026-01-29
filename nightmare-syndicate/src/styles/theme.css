@@ -1,10 +1,14 @@
 @layer base {
   :root {
-    --color-bg-dark: #0b0c0f;
-    --color-bg-panel: #11131a;
-    --color-text-primary: #e9e9ea;
-    --color-text-secondary: #8a8a8c;
-    --color-accent: #ff2b2b;
+    --color-bg-dark: #878785;
+    --color-bg-panel: #878785d9;
+    --color-text-primary: #7fd1ae;
+    --color-text-secondary: #7fd1ae99;
+    --color-accent: #896000;
+  }
+
+  html {
+    background-color: var(--color-bg-dark);
   }
 
   * {
@@ -14,8 +18,8 @@
   }
 
   body {
-    font-family: 'Space Mono', monospace;
-    background-color: var(--color-bg-dark);
+    font-family: 'Special Elite', 'Courier New', monospace;
+    background-color: transparent;
     color: var(--color-text-primary);
     line-height: 1.6;
     position: relative;
@@ -27,22 +31,25 @@
     position: fixed;
     inset: 0;
     pointer-events: none;
-    background-image: url('../../img/3500.webp');
+    background-image: url('../../img/bg1.webp');
     background-size: cover;
     background-position: center;
-    opacity: 0.15;
+    opacity: 1;
     z-index: 0;
-    mix-blend-mode: screen;
+    mix-blend-mode: normal;
   }
 
   h1, h2, h3, h4, h5, h6 {
+    font-family: 'Black Ops One', 'Impact', sans-serif;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: 700;
+    letter-spacing: 0.08em;
+    font-weight: 400;
+    color: var(--color-text-primary);
   }
 
   button {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Special Elite', 'Courier New', monospace;
+    letter-spacing: 0.05em;
   }
 
   body #root {
