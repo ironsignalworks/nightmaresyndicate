@@ -10,7 +10,7 @@ export function Dossiers() {
   const [openId, setOpenId] = useState<string | null>(dossiers[0]?.id ?? null);
 
   return (
-    <main className="max-w-5xl mx-auto px-4 pt-0 pb-12 text-[#fef9e8] subtitle-font">
+    <main className="max-w-6xl mx-auto px-4 pt-0 pb-12 text-[#fef9e8] subtitle-font">
       <div className="mb-8">
         <h1 className="text-3xl mb-2 tracking-[0.2em] uppercase stencil-font">
           DOSSIERS

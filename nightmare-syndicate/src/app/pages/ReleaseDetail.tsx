@@ -28,7 +28,7 @@ export function ReleaseDetail() {
     normalizedStatus.includes('PRE-ORDER');
 
   return (
-    <main className="max-w-4xl mx-auto px-4 pt-0 pb-12">
+    <main className="max-w-6xl mx-auto px-4 pt-0 pb-12">
       <Link
         to="/releases"
         className="text-sm text-white hover:text-[#878785] mb-6 inline-block"
@@ -95,7 +95,7 @@ export function ReleaseDetail() {
             {release.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs border border-[#7fd1ae]/30 px-3 py-1"
+                className="inline-flex items-center justify-center text-center text-xs border border-[#7fd1ae]/30 px-3 py-1"
               >
                 {tag}
               </span>
@@ -160,7 +160,7 @@ export function ReleaseDetail() {
 
         <div className="mt-6 flex flex-col gap-3">
           {isAvailable && (
-            <button className="w-full border border-[#896000] px-6 py-3 text-sm hover:bg-[#896000] hover:text-[#7fd1ae] transition-colors">
+            <button className="w-full border border-[#896000] px-6 py-3 text-sm text-center hover:bg-[#896000] hover:text-[#7fd1ae] transition-colors">
               ACQUIRE [CONTACT REQUIRED]
             </button>
           )}

@@ -63,7 +63,7 @@ export function Releases() {
                 {release.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs border border-[#7fd1ae]/30 px-2 py-0.5"
+                    className="inline-flex items-center justify-center text-center text-xs border border-[#7fd1ae]/30 px-2 py-0.5"
                   >
                     {tag}
                   </span>
