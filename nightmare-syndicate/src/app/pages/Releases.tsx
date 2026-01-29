@@ -18,7 +18,7 @@ export function Releases() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
         {visibleReleases.map((release) => {
           const normalizedStatus = release.status.toUpperCase();
           const variant =
@@ -27,7 +27,7 @@ export function Releases() {
               : 'red';
 
           return (
-            <Panel key={release.id} className="flex flex-col">
+            <Panel key={release.id} className="flex flex-col h-full">
               <div className="mb-4">
                 <Stamp text={release.status} variant={variant} />
               </div>

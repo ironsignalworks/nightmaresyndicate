@@ -45,7 +45,7 @@ export function BandDossier() {
               src={band.logo}
               alt={`${band.name} insignia`}
               className="block w-full max-w-md"
-              imageClassName="w-full max-h-64 object-contain border border-[#7fd1ae]/30 rounded bg-[#242422]/30 p-4"
+              imageClassName="w-full max-h-64 object-contain"
             />
           </div>
         )}

@@ -39,8 +39,21 @@ export interface Release {
 
 export interface Dossier {
   id: string;
-  title: string;
-  tag: string;
+  header: string;
+  status: string;
+  name: string;
+  designation: string;
+  fileRef: string;
+  overview: string;
+  role: string[];
+  location: string;
+  alias: string;
+  clearance: string;
+  activityLog: { label: string; detail: string }[];
+  finalDirective: string;
+  addendum: string[];
+  artifactName?: string;
+  artifactDetail?: string;
 }
 
 export const bands: Band[] = [
@@ -87,12 +100,11 @@ export const bands: Band[] = [
     classification: 'ALLY - DISTRIBUTION CELL',
     region: 'LISBOA, PT',
     summary:
-      'Vortex is an underground collective powering live Nightmare Syndicate shows and running stealth distribution routes across Lisbon. Tap into IG @vortex_associacao for coded drops.',
+      'Vortex is an underground collective powering live shows and running stealth distribution routes across Lisbon. Tap into IG @vortex_associacao for coded drops. Contact: info@nightmaresyndicaterecords.com.',
     notes: [
       'Contact: vortex.lisboa@gmail.com',
       'Visit IG dispatches: @vortex_associacao (content self-destructs).',
-      'Hosts impromptu gigs in shielded basements; merch exchanged at the door.',
-      'Posts encrypted dispatches via Instagram bursts, deleted within minutes.',
+      'Hosts gigs in shielded basements; merch exchanged in situ.',
     ],
   },
   {
@@ -204,9 +216,188 @@ Compliance is assumed. Playback constitutes consent.`,
 ];
 
 export const dossiers: Dossier[] = [
-  { id: 'FX-001', title: 'FIELD REPORT - BIKINI ATOLL BROADCAST', tag: 'SURVIVAL NOT GUARANTEED' },
-  { id: 'FX-019', title: 'RETRIEVAL FAILURE LOG - SECTOR 19-X', tag: 'ALL OPERATIVES LOST' },
-  { id: 'FX-027', title: 'SUPPLY CHAIN - SELVAJARIA / VORTEX', tag: 'ALLY COORDINATION' },
-  { id: 'FX-033', title: 'PERSONNEL DOSSIER - DD NUKES / FUKUSHIMA BABY JONES', tag: 'FORCE-READY' },
-  { id: 'FX-045', title: 'BROADCAST CLEARANCE - NIGHTMARE SYNDICATE RECORDS', tag: 'PLAYBACK = CONSENT' },
+  {
+    id: 'dd-nukes',
+    header: 'FIELD REPORT',
+    status: 'OPERATIVE LOST',
+    name: 'MAJOR DD NUKES',
+    designation: 'MAJOR DD NUKES',
+    fileRef: 'DD-NUKE-317',
+    overview:
+      'Primary percussive threat for the FTXP Radioactive Command Strike Unit. Architect of detonation-tempo mapping systems used in large-scale sonic warfare operations. Responsible for converting rhythm into structural collapse.',
+    role: ['Drum Strike Architect', 'Blast Pattern Logistics & Detonation Timing Sequence'],
+    location:
+      'UNKNOWN. Last observed at The Ticking Void, a non-cartographic rupture near the ruins of Old Nevada.',
+    alias: 'The Countdown Messiah',
+    clearance: 'Level 9 Noise Command / Chrono-Explosive Sync Division',
+    activityLog: [
+      {
+        label: '2051',
+        detail:
+          'Initiated tempo siege during the Siege of Clocksend. Enemy mech swarms destabilized by irregular 5/4 blast cluster saturation.',
+      },
+      {
+        label: '2053',
+        detail:
+          'Rumored origin of Class-IV seismic disturbance while performing solo inside dormant caldera.',
+      },
+      {
+        label: '2055',
+        detail:
+          'Suspected infiltration of Temporal Interference Grid during blackout rehearsal cycle. Timeline segment flagged unstable.',
+      },
+      {
+        label: 'CURRENT',
+        detail:
+          'Off-grid. Rhythmic anomaly clusters blooming near Echo Rift. Continued operation probable.',
+      },
+    ],
+    finalDirective: 'Do not attempt synchronization. Beats may override human biological rhythm.',
+    addendum: [
+      'Collects timepieces from ruined cities. Keeps each set locked to a different time signature.',
+      'Writes poetry exclusively in Morse code. Mostly unreadable. Possibly sentient.',
+      'Observed tapping rhythms into fault-line rock formations to test collapse thresholds.',
+    ],
+    artifactName: 'Temporal Sync Relic A-13',
+    artifactDetail: 'Melted Clocksend metronome still ticking in 13/8.',
+  },
+  {
+    id: 'cindy-cyanide',
+    header: 'FIELD REPORT',
+    status: 'FORCE-READY',
+    name: 'CINDY CYANIDE',
+    designation: 'CINDY CYANIDE',
+    fileRef: 'CN-OMEGA-SYNTH',
+    overview:
+      'Controller of synthetic signal payloads and primary vocal vector deployment. Specialist in psychoacoustic contamination and dreamstate weaponization.',
+    role: ['Synth Engineering & Primary Vocal Vectors'],
+    location: 'Oakland, CA — Monarch Broadcast Tower Ruins — Transmitter Room G13.',
+    alias: 'POP-TOXIC-77',
+    clearance: 'G.L.O.W. Tier 13',
+    activityLog: [
+      {
+        label: '2050',
+        detail: 'Unauthorized vocal test disrupted weather satellites. Three-day aurora storm.',
+      },
+      { label: '2052', detail: 'Deployed synthetic vocal neuro-agents during Vault IV siege.' },
+      {
+        label: '2054',
+        detail: 'AI-laced dreamstate recordings sold on black sound markets as psychic traps.',
+      },
+      {
+        label: 'CURRENT',
+        detail:
+          'Emitting anomalous frequencies from decommissioned Oakland radio array. Linked to multiple ghost-signal incidents.',
+      },
+    ],
+    finalDirective:
+      'Voice signal contains harmonics matching neurochemical disruptors. Approach only with dream shielding.',
+    addendum: [
+      'Hoards corrupted pop radio promo cassettes.',
+      'Creates DIY perfume bombs using distilled fog, rad-flowers, and static electricity.',
+      'Hosts illicit dream-sharing sessions through hacked synth arrays.',
+    ],
+    artifactName: 'GLAMATRON-6 Infiltration Doll',
+    artifactDetail: 'Auto-tuned plush core seeded with subliminal lullabies.',
+  },
+  {
+    id: 'obi-war-chernobyl',
+    header: 'PERSONNEL DOSSIER',
+    status: 'PLAYBACK = CONSENT',
+    name: 'OBI WAR CHERNOBYL',
+    designation: 'OBI WAR CHERNOBYL',
+    fileRef: 'OBI-WARCHEM-INF',
+    overview:
+      'Roaming field commander for Fatal Exposure operations. Issues coded riffs to sleeper agents and directs strike alignments across fallout zones.',
+    role: ['Vocals', 'Guitars', 'Nuclear Doctrine Command', 'Wasteland Riff Deployment'],
+    location: 'Mobile across fallout zones. Frequently surfaces near weaponized aurora fields.',
+    alias: 'The Fallout King',
+    clearance: 'Ghost Protocol Omega',
+    activityLog: [
+      {
+        label: '2050',
+        detail: 'Denounced in seven failed states for deploying illegal dissonant sequences.',
+      },
+      { label: '2052', detail: 'Sole survivor of Riff Trials of Sector Chernobylia.' },
+      {
+        label: '2054',
+        detail:
+          'Constructed The Warcaster, a guitar rig integrated with declassified Cold War technology and bone-conductive strings.',
+      },
+      {
+        label: 'CURRENT',
+        detail:
+          'Appears intermittently in war-torn zones to broadcast coded instructions to embedded operatives.',
+      },
+    ],
+    finalDirective:
+      'Engagement not advised. Classified mobile existential threat under Code 00 ENDLOOP.',
+    addendum: [
+      'Rebuilds burned guitars with relic parts scavenged from Cold War bunkers.',
+      'Maintains scrapbook of abandoned radio frequencies annotated with "Who was listening?"',
+      'Writes war manifestos on any available surface.',
+    ],
+    artifactName: 'Signal Tag ENDLOOP-77',
+    artifactDetail: 'Harmonically unstable dog tag etched with "EVERY RIFF A BOMB."',
+  },
+  {
+    id: 'fukushima-baby-jones',
+    header: 'PERSONNEL DOSSIER',
+    status: 'ARCHIVE SEALED',
+    name: 'FUKUSHIMA BABY JONES',
+    designation: 'FUKUSHIMA BABY JONES',
+    fileRef: 'FBJ-NULL',
+    overview: 'Affiliated unit element. Data integrity compromised.',
+    role: ['UNCONFIRMED'],
+    location: 'UNDISCLOSED',
+    alias: 'UNLISTED',
+    clearance: 'UNCONFIRMED',
+    activityLog: [{ label: 'ACTIVITY', detail: 'No verified entries.' }],
+    finalDirective: 'None issued. Multiple retrieval attempts unsuccessful.',
+    addendum: ['No personal file available.'],
+  },
 ];
+
+export const dossierUnitSummary = {
+  unit: 'FTXP RADIOACTIVE COMMAND STRIKE UNIT',
+  classification: 'CLASSIFIED DOSSIER // FILE 404-BETA',
+};
+
+export const dossierTransmissionLog = {
+  id: 'file-091-rad-prime',
+  title: 'RECORDING LOG - FILE 091-RAD-PRIME',
+  body: `FATAL EXPOSURE is an unauthorized transmission recovered from the outer edge of the FTXP Heavy Yield Strategy Operations Squad archive. Logged under FILE 091-RAD-PRIME, this recording documents the sonic collapse of a command unit selected for unstable potential, extreme contamination tolerance, and zero-remorse battlefield behavior.
+
+Every operative involved in this broadcast has been flagged across multiple fallout zones for reality-deforming audio activity, infrastructure destabilization, and psychological erosion. What remains is not a “record” in any conventional sense, but a looping incident: blast patterns functioning as weapons, riffs behaving as directives, and vocals carrying neurological side effects.
+
+Personnel assigned to this transmission:
+
+Major DD Nukes
+Drums / Chaos Engineering
+Percussive detonation architect responsible for blast-pattern logistics and seismic rhythm deployment.
+
+Fukushima Baby Jones
+Bass / Advanced Sonic Subterfuge
+Low-end radiation tremor specialist. Frequencies associated with memory erosion and infrastructure compromise.
+
+Cindy Cyanide
+Synths / Mechanized Warfare Protocol
+Primary vocal vector and synthetic signal payload controller. Linked to ghost-signal outbreaks and psychic trap recordings.
+
+Obi War Chernobyl
+Vocals / Guitars / Barbed Wire Apocalypse Revival
+Field commander for nuclear doctrine broadcasts and wasteland riff deployment.
+
+All sessions were conducted under full contamination alert.
+No clean takes attempted.
+No remediation performed.
+
+Deployment overseen by Nightmare Syndicate Records in alliance with Selvajaria Records and Vortex Records.
+Last confirmed ping received from Sector 19-X.
+Retrieval efforts failed.
+
+FATAL EXPOSURE does not simulate nuclear horror.
+It behaves like it.
+
+Playback constitutes consent.`,
+};
