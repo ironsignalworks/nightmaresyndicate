@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath } from 'node:url'
 
 export default defineConfig({
+  base: '/nightmare-syndicate/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
