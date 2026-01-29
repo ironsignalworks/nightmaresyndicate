@@ -16,7 +16,7 @@ export function Contact() {
         <Panel>
           <h2 className="text-lg mb-4">GENERAL INQUIRIES</h2>
           
-          <div className="space-y-3 text-sm">
+          <div className="space-y-3 text-sm text-white">
             <div className="border-b border-[#7fd1ae]/30 pb-3">
               <span className="text-xs text-[#7fd1ae] block mb-1">EMAIL</span>
               <p className="font-mono">info@nightmaresyndicaterecords.com</p>
@@ -39,7 +39,7 @@ export function Contact() {
         <Panel>
           <h2 className="text-lg mb-4">SUBMISSIONS</h2>
           
-          <div className="space-y-3 text-sm">
+          <div className="space-y-3 text-sm text-white">
             <div className="border-b border-[#7fd1ae]/30 pb-3">
               <span className="text-xs text-[#7fd1ae] block mb-1">EMAIL</span>
               <p className="font-mono">info@nightmaresyndicaterecords.com</p>
@@ -59,7 +59,7 @@ export function Contact() {
         <Panel>
           <h2 className="text-lg mb-4">DISTRO</h2>
           
-          <div className="space-y-3 text-sm">
+          <div className="space-y-3 text-sm text-white">
             <div className="border-b border-[#7fd1ae]/30 pb-3">
               <span className="text-xs text-[#7fd1ae] block mb-1">EMAIL</span>
               <p className="font-mono">info@nightmaresyndicaterecords.com</p>

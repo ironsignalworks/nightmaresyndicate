@@ -10,7 +10,7 @@ export function Dossiers() {
   const [openId, setOpenId] = useState<string | null>(dossiers[0]?.id ?? null);
 
   return (
-    <main className="max-w-5xl mx-auto px-4 py-12 font-mono text-[#fef9e8]">
+    <main className="max-w-5xl mx-auto px-4 py-12 text-[#fef9e8] subtitle-font">
       <div className="mb-8">
         <h1 className="text-3xl mb-2 tracking-[0.2em] uppercase stencil-font">
           DOSSIERS
@@ -25,7 +25,7 @@ export function Dossiers() {
           {dossierUnitSummary.classification}
         </p>
         <h2 className="text-xl uppercase stencil-font">{dossierUnitSummary.unit}</h2>
-        <p className="text-sm mt-3">
+        <p className="text-sm mt-3 subtitle-font">
           Personnel dossiers and operative profiles. Structured as classified intelligence files with role
           assignments, locations, clearance levels, activity logs, directives, and addendum artifacts.
         </p>
