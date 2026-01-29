@@ -107,9 +107,12 @@ export function BandDossier() {
             </p>
             <p className="text-xs text-white">{latestRelease.format}</p>
             <p className="text-sm text-white leading-relaxed">
-              Fatal Exposure&apos;s Bikini Atoll Broadcast detonation remains the current dossier:
-              eleven tracks sourced from the Sector 19-X blast radius, limited to 300 units and routed
-              jointly by Selvajaria, Vortex, and Nightmare Syndicate Records.
+              Fatal Exposure&apos;s Bikini Atoll Broadcast detonation (tracked on
+              {' '}
+              {latestRelease.releaseDate ?? 'classified release date'}
+              ) remains the current dossier: eleven tracks sourced from the Sector 19-X blast radius,
+              limited to 300 units and routed jointly by Selvajaria, Vortex, and Nightmare Syndicate
+              Records.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
               <Link

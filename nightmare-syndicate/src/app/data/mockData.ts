@@ -38,6 +38,8 @@ export interface Release {
   externalUrl?: string;
   selvajariaUrl?: string;
   videos?: string[];
+  releaseDate?: string;
+  limitedNote?: string;
 }
 
 export interface Dossier {
@@ -138,14 +140,14 @@ export const releases: Release[] = [
     title: 'BIKINI ATOLL BROADCAST',
     format: 'CD / SELVAJARIA / VORTEX / NIGHTMARE SYNDICATE',
     year: 2026,
-    status: 'AVAILABLE - 300 UNITS',
+    status: 'COMING SOON',
     tags: [
       'D-BEAT RADIATION PUNK',
       'METALLIC CRUST',
       'SYNTH DETONATIONS',
       'FULL SPECTRUM PRESSURE',
     ],
-    description: `Fatal Exposure - Bikini Atoll Broadcast (2026-02-13), catalog NSR-01-A1X-ROGUE.
+    description: `Fatal Exposure - Bikini Atoll Broadcast (13 February 2026), catalog NSR-01-A1X-ROGUE.
 
 CD released via Selvajaria Records, Vortex Records & Nightmare Syndicate Records. Limited to 300 units. Survival not guaranteed.
 
@@ -179,6 +181,8 @@ Compliance is assumed. Playback constitutes consent.`,
       'https://www.youtube.com/watch?v=Ro-oi2_KNi4',
       'https://www.youtube.com/watch?v=t0OVM-8ZTOw',
     ],
+    releaseDate: '13 February 2026',
+    limitedNote: 'Limited to 300 contaminated copies. No repress scheduled.',
   },
   {
     id: 'nsr-02-intel',
@@ -212,9 +216,12 @@ Compliance is assumed. Playback constitutes consent.`,
     format: 'CD / LP / DIGITAL / CASSETTE',
     year: 2026,
     status: 'COMING SOON',
-    tags: ['LP', 'FULL-LENGTH', 'FIELD REPORT', 'PRE-RELEASE'],
-    description:
-      'The Human Crust of War is the next escalation from Fatal Exposure: a wall of irradiated D-beat dirge tracked live inside an abandoned fallout shelter. Video transmissions, promo posters, and classified rehearsal tapes are feeding into the build-up now.',
+    tags: ['CD', 'LP', 'FULL-LENGTH', 'FIELD REPORT', 'PRE-RELEASE'],
+    description: `The Human Crust of War is the next escalation from Fatal Exposure: a wall of irradiated D-beat dirge tracked live inside a rotating series of undisclosed, highly classified bunkers stretching from London to California, to the ruins of an Eastern Bloc radar array.
+
+With Major DD Nukes and Fukushima Baby Jones still missing in action, the current lineup mutates around Cindy Cyanide, Obi War Chernobyl, and a volatile synth artillery unit overseen by the Nukefinder General.
+
+Expect more synths, more chaos, more paranoia, more video transmissions, promo posters, and classified rehearsal tapes are feeding into the build-up now.`,
     coverImage: hcwFront,
     backImage: hcwBack,
     externalUrl: 'https://fatalexposure.bandcamp.com/',

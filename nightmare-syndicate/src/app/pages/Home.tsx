@@ -30,13 +30,23 @@ function ReleaseCard({ release, stampText, bodyCopy, footerNote, actions, classN
   return (
     <Panel className={`self-stretch flex flex-col gap-4 ${className}`}>
       {release.coverImage && (
-        <div>
+        <div className="relative">
           <LightboxImage
             src={release.coverImage}
             alt={`${release.title} cover`}
             className="w-full"
             imageClassName="object-cover border border-[#7fd1ae]/30 rounded"
           />
+          {release.id === 'nsr-01-a1x-rogue' && release.releaseDate && (
+            <div
+              className="absolute top-3 left-3"
+              style={{ transform: 'rotate(-6deg)' }}
+            >
+              <div className="bg-[#7fd1ae] text-[#050505] px-4 py-2 rounded shadow-lg tracking-[0.3em] text-xs uppercase border border-[#050505]/30">
+                OUT {release.releaseDate.toUpperCase()}
+              </div>
+            </div>
+          )}
         </div>
       )}
       <div className="flex items-center gap-3">
@@ -69,10 +79,22 @@ function ReleaseCard({ release, stampText, bodyCopy, footerNote, actions, classN
             <Stamp text={release.status} variant={statusVariant} />
           </div>
         </div>
+        {release.releaseDate && (
+          <div className="border-b border-[#7fd1ae]/30 pb-2">
+            <span className="text-xs text-[#7fd1ae] block">RELEASE DATE</span>
+            <p className="text-sm">{release.releaseDate}</p>
+          </div>
+        )}
+        {release.limitedNote && (
+          <div className="border-b border-[#7fd1ae]/30 pb-2">
+            <span className="text-xs text-[#7fd1ae] block">LIMITED RUN</span>
+            <p className="text-sm text-white">{release.limitedNote}</p>
+          </div>
+        )}
       </div>
       {bodyCopy && <div className="space-y-3">{bodyCopy}</div>}
       {footerNote && <div>{footerNote}</div>}
-      <div className="flex flex-wrap gap-3">{actions}</div>
+      {actions && <div className="flex flex-wrap gap-3">{actions}</div>}
     </Panel>
   );
 }
@@ -173,9 +195,9 @@ export function Home() {
             actions={
               <Link
                 to={`/releases/${latestRelease.id}`}
-                className="border border-[#896000] px-6 py-3 text-sm text-center hover:bg-[#896000] hover:text-[#7fd1ae] transition-colors"
+                className="border border-[#896000] px-4 py-2 text-sm hover:bg-[#896000] hover:text-[#7fd1ae] transition-colors"
               >
-                OPEN FILE
+                READ DOSSIER
               </Link>
             }
           />
@@ -200,30 +222,12 @@ export function Home() {
               </>
             }
             actions={
-              <>
-                <Link
-                  to={`/releases/${upcomingRelease.id}`}
-                  className="border border-[#896000] px-4 py-2 text-sm hover:bg-[#896000] hover:text-[#7fd1ae] transition-colors"
-                >
-                  READ DOSSIER
-                </Link>
-                {upcomingRelease.externalUrl && (
-                  <a
-                    href={upcomingRelease.externalUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="border border-[#7fd1ae]/40 px-4 py-2 text-sm hover:bg-[#7fd1ae]/10 transition-colors"
-                  >
-                    BANDCAMP
-                  </a>
-                )}
-                <a
-                  href="mailto:info@nightmaresyndicaterecords.com"
-                  className="border border-[#7fd1ae]/40 px-4 py-2 text-sm hover:bg-[#7fd1ae]/10 transition-colors"
-                >
-                  EMAIL HQ
-                </a>
-              </>
+              <Link
+                to={`/releases/${upcomingRelease.id}`}
+                className="border border-[#896000] px-4 py-2 text-sm hover:bg-[#896000] hover:text-[#7fd1ae] transition-colors"
+              >
+                READ DOSSIER
+              </Link>
             }
           />
         )}
@@ -283,6 +287,14 @@ export function Home() {
                 </div>
               </a>
             ))}
+          </div>
+          <div className="mt-6">
+            <Link
+              to="/releases/nsr-01-a1x-rogue#videos"
+              className="inline-flex items-center justify-center border border-[#896000] px-6 py-3 text-xs uppercase tracking-[0.3em] hover:bg-[#896000] hover:text-[#7fd1ae] transition-colors"
+            >
+              WATCH ALL VIDEOS
+            </Link>
           </div>
         </Panel>
       )}

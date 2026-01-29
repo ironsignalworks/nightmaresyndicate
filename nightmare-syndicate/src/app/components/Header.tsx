@@ -29,10 +29,18 @@ export function Header() {
               CAME FOR THE RIFFS, STAYED FOR THE RADIATION
             </p>
           </div>
-          <div className="border border-[#896000] px-3 py-1">
-            <span className="text-xs text-[#896000] font-bold tracking-wider">
-              CLASSIFICATION: REDACTED
-            </span>
+          <div className="flex flex-col sm:flex-row gap-3 items-stretch">
+            <div className="border border-[#896000] px-3 py-1 flex items-center justify-center">
+              <span className="text-xs text-[#896000] font-bold tracking-wider">
+                CLASSIFICATION: REDACTED
+              </span>
+            </div>
+            <Link
+              to="/login"
+              className="border border-[#7fd1ae]/40 px-4 py-2 text-xs uppercase tracking-[0.3em] text-center hover:bg-[#7fd1ae]/10 transition-colors"
+            >
+              LOG IN
+            </Link>
           </div>
         </div>
 

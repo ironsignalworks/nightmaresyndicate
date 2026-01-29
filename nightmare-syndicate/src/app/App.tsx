@@ -8,6 +8,7 @@ import { Submit } from '@/app/pages/Submit';
 import { Contact } from '@/app/pages/Contact';
 import { BandDossier } from '@/app/pages/BandDossier';
 import { ReleaseDetail } from '@/app/pages/ReleaseDetail';
+import { Login } from '@/app/pages/Login';
 
 export default function App() {
   const handleBackToTop = () => {
@@ -28,6 +29,7 @@ export default function App() {
             <Route path="/dossiers" element={<Dossiers />} />
             <Route path="/submit" element={<Submit />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </div>
         <button

@@ -64,6 +64,19 @@ export function ReleaseDetail() {
             <span className="text-xs text-[#7fd1ae] block mb-1">YEAR</span>
             <p className="text-sm">{release.year}</p>
           </div>
+
+          {release.releaseDate && (
+            <div className="border-b border-[#7fd1ae]/30 pb-3">
+              <span className="text-xs text-[#7fd1ae] block mb-1">RELEASE DATE</span>
+              <p className="text-sm">{release.releaseDate}</p>
+            </div>
+          )}
+          {release.limitedNote && (
+            <div className="border-b border-[#7fd1ae]/30 pb-3">
+              <span className="text-xs text-[#7fd1ae] block mb-1">LIMITED RUN</span>
+              <p className="text-sm text-white">{release.limitedNote}</p>
+            </div>
+          )}
         </div>
 
         {(release.coverImage || release.backImage) && (
