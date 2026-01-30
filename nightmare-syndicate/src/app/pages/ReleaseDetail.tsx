@@ -74,7 +74,17 @@ export function ReleaseDetail() {
           {release.limitedNote && (
             <div className="border-b border-[#7fd1ae]/30 pb-3">
               <span className="text-xs text-[#7fd1ae] block mb-1">LIMITED RUN</span>
-              <p className="text-sm text-white">{release.limitedNote}</p>
+              <p className="text-sm text-white">
+                {release.limitedNote}
+                {release.limitedLinkUrl && (
+                  <>
+                    {' '}
+                    <a href={release.limitedLinkUrl} target="_blank" rel="noreferrer" className="underline">
+                      {release.limitedLinkLabel ?? release.limitedLinkUrl}
+                    </a>
+                  </>
+                )}
+              </p>
             </div>
           )}
         </div>

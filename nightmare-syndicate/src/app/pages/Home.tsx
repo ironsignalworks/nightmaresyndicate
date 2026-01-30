@@ -89,7 +89,22 @@ function ReleaseCard({ release, stampText, bodyCopy, footerNote, actions, classN
         {release.limitedNote && (
           <div className="border-b border-[#7fd1ae]/30 pb-2">
             <span className="text-xs text-[#7fd1ae] block">LIMITED RUN</span>
-            <p className="text-sm text-white">{release.limitedNote}</p>
+            <p className="text-sm text-white">
+              {release.limitedNote}
+              {release.limitedLinkUrl && (
+                <>
+                  {' '}
+                  <a
+                    href={release.limitedLinkUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline"
+                  >
+                    {release.limitedLinkLabel ?? release.limitedLinkUrl}
+                  </a>
+                </>
+              )}
+            </p>
           </div>
         )}
       </div>

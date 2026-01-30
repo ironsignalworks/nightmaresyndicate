@@ -8,6 +8,10 @@ import hcwBack from '../../../img/psde.png';
 import selvajariaLogo from '../../../img/selva1.png';
 import vortexLogo from '../../../img/vortex1.png';
 import falloutThumb from '../../../img/fallout1.png';
+import nagasakiLogo from '../../../img/nagasakilogo.png';
+import nagasakiVisualOne from '../../../img/nagasaki1.png';
+import nagasakiVisualTwo from '../../../img/nagasaki2.png';
+import nagasakiCover from '../../../img/nagasakicover1.png';
 
 export interface Band {
   id: string;
@@ -41,6 +45,8 @@ export interface Release {
   videos?: string[];
   releaseDate?: string;
   limitedNote?: string;
+  limitedLinkLabel?: string;
+  limitedLinkUrl?: string;
 }
 
 export interface Dossier {
@@ -84,6 +90,27 @@ export const bands: Band[] = [
     upcomingRelease: 'The Human Crust of War',
     gallery: [bandPhotoOne, bandPhotoTwo],
     latestReleaseId: 'nsr-01-a1x-rogue',
+  },
+  {
+    id: 'nagasaki-sunrise',
+    name: 'NAGASAKI SUNRISE',
+    status: 'ACTIVE',
+    classification: 'WW2 PACIFIC RIM METALIZED CRUST',
+    region: 'PACIFIC RIM / NORTHERN JAPAN ARCHIPELAGO',
+    summary:
+      'Pacific theater survivors channeling warship sirens, incendiary hardcore, and molten crust into a single sunrise detonation. Songs are constructed from archival radio chants, rusted hull resonance, and field recordings sourced along bombed harbors.',
+    notes: [
+      'Percussion kit welded from submarine plating. Floor tom is an unexploded naval shell.',
+      'Every show opens with a reclaimed air-raid siren recorded in 1945. Audience required to wear ear protection and armbands stamped "Sunrise = Detonation".',
+      'Master tapes tracked at sunrise only, facing the Pacific. Any cloud cover cancels recording.',
+      'Upcoming strike: "Invasion" split with Military Shadow (Japan). Vocals tracked through surplus bunker PA horns.',
+      'Field intel logged from dawn patrols stationed near Hakodate ship graveyards.',
+    ],
+    logo: nagasakiLogo,
+    bandcampUrl: 'https://nagasakisunrise.bandcamp.com/',
+    gallery: [nagasakiVisualOne, nagasakiVisualTwo],
+    upcomingRelease: 'INVASION (SPLIT W/ MILITARY SHADOW)',
+    latestReleaseId: 'nsr-05-distroyer',
   },
   {
     id: 'selvajaria',
@@ -152,7 +179,7 @@ export const releases: Release[] = [
     ],
     description: `Fatal Exposure - Bikini Atoll Broadcast (13 February 2026), catalog NSR-01-A1X-ROGUE.
 
-CD released via Selvajaria Records, Vortex Records & Nightmare Syndicate Records. Limited to 300 units. Survival not guaranteed.
+CD released via Selvajaria Records, Vortex Records & Nightmare Syndicate Records. Limited to 200 units. Survival not guaranteed.
 
 Bikini Atoll Broadcast marks the first officially unauthorized radioactive transmission from Fatal Exposure, the sonic warfare cell operating under the FTXP Heavy Yield Strategy Operations Deployment Squad. What you're holding is not an album so much as a contaminated artifact, salvaged from the blast radius and cleared for civilian exposure by absolutely no one.
 
@@ -186,7 +213,7 @@ Compliance is assumed. Playback constitutes consent.`,
     ],
     releaseDate: '13 February 2026',
     limitedNote:
-      'Limited to 300 contaminated copies. Includes the tour program fanzine and access to the classified video dossier. No repress scheduled.',
+      'Limited to 200 contaminated copies. Includes the tour program fanzine and access to the classified video dossier. No repress scheduled.',
   },
   {
     id: 'nsr-02-intel',
@@ -229,6 +256,23 @@ Expect more synths, more chaos, more paranoia, more video transmissions, promo p
     coverImage: hcwFront,
     backImage: hcwBack,
     externalUrl: 'https://fatalexposure.bandcamp.com/',
+  },
+  {
+    id: 'nsr-05-distroyer',
+    catalogId: 'TNT-02',
+    artist: 'NAGASAKI SUNRISE',
+    title: 'DISTROYER',
+    format: 'CD',
+    year: 2024,
+    status: 'OUT NOW',
+    tags: ['PACIFIC RIM CRUST', 'CD', 'SYMPHONY OF DESTRUCTION', 'WW2 THEMES'],
+    description:
+      'Recorded across warship skeletons at dawn, DISTROYER is Nagasaki Sunrise weaponizing air-raid sirens, submarine percussion, and crust bombardments into a single CD transmission. Issued in 2024 via Tanayte! Records (NSR sub-label) in alliance with Symphony of Destruction Records, the album drags archival radio chants into present-day warfare riffs. Play loud enough to wake the harbor ghosts.',
+    coverImage: nagasakiCover,
+    externalUrl: 'https://nagasakisunrise.bandcamp.com/',
+    limitedNote: 'CD edition only. Joint deployment with Symphony of Destruction Records.',
+    limitedLinkLabel: 'Symphony of Destruction Records',
+    limitedLinkUrl: 'https://www.symphonyofdestruction.org/',
   },
 ];
 

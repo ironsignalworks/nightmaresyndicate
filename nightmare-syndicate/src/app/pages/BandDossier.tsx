@@ -101,17 +101,32 @@ export function BandDossier() {
               {latestRelease.title}
             </Link>
             <p className="text-sm text-[#7fd1ae]">
-              {latestRelease.catalogId} · {latestRelease.year}
+              {latestRelease.catalogId} - {latestRelease.year}
             </p>
             <p className="text-xs text-white">{latestRelease.format}</p>
-            <p className="text-sm text-white leading-relaxed">
-              Fatal Exposure&apos;s Bikini Atoll Broadcast detonation (tracked on
-              {' '}
-              {latestRelease.releaseDate ?? 'classified release date'}
-              ) remains the current dossier: eleven tracks sourced from the Sector 19-X blast radius,
-              limited to 300 units and routed jointly by Selvajaria, Vortex, and Nightmare Syndicate
-              Records.
-            </p>
+            {latestRelease.description && (
+              <p className="text-sm text-white leading-relaxed whitespace-pre-line">
+                {latestRelease.description}
+              </p>
+            )}
+            {latestRelease.limitedNote && (
+              <p className="text-xs text-white">
+                {latestRelease.limitedNote}
+                {latestRelease.limitedLinkUrl && (
+                  <>
+                    {' '}
+                    <a
+                      href={latestRelease.limitedLinkUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="underline"
+                    >
+                      {latestRelease.limitedLinkLabel ?? latestRelease.limitedLinkUrl}
+                    </a>
+                  </>
+                )}
+              </p>
+            )}
             <div className="flex flex-wrap gap-3 pt-2">
               <Link
                 to={`/releases/${latestRelease.id}`}
@@ -136,12 +151,9 @@ export function BandDossier() {
         {band.upcomingRelease && (
           <div className="mb-6 border border-dashed border-[#7fd1ae]/30 p-4 space-y-2">
             <span className="text-xs text-[#7fd1ae] block mb-1">UPCOMING TRANSMISSION</span>
-            <Link
-              to="/releases/nsr-04-hcw"
-              className="tab-control text-[0.6rem] tracking-[0.3em]"
-            >
+            <div className="tab-control text-[0.6rem] tracking-[0.3em]">
               {band.upcomingRelease}
-            </Link>
+            </div>
             <p className="text-xs text-[#7fd1ae] uppercase tracking-[0.3em]">
               VIDEOS - PROMOS - POSTERS INBOUND
             </p>
@@ -180,3 +192,4 @@ export function BandDossier() {
     </main>
   );
 }
+

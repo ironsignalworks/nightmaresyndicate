@@ -37,7 +37,7 @@ export function Merch() {
 
       <MerchItem
         title="BIKINI ATOLL BROADCAST / CD"
-        desc="Official NSR-01-A1X-ROGUE disc. Includes the tour program fanzine plus access to the classified video dossier. 300 units only."
+        desc="Official NSR-01-A1X-ROGUE disc. Includes the tour program fanzine plus access to the classified video dossier. 200 units only."
       >
         <div className="flex flex-wrap gap-3">
           <Stamp text="COMING SOON" />
