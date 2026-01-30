@@ -17,7 +17,7 @@ export default function App() {
   };
 
   return (
-    <Router basename="/nightmaresyndicate">
+    <Router basename={import.meta.env.BASE_URL}>
       <div className="min-h-screen bg-transparent flex flex-col">
         <Header />
         <div className="flex-1">
