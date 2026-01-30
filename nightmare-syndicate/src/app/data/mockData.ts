@@ -107,6 +107,7 @@ export const bands: Band[] = [
       'Master tapes tracked at sunrise only, facing the Pacific. Any cloud cover cancels recording.',
       'Upcoming strike: "Invasion" split with Military Shadow (Japan). Vocals tracked through surplus bunker PA horns.',
       'Field intel logged from dawn patrols stationed near Hakodate ship graveyards.',
+      'Primary link: https://nagasakisunrise.com',
     ],
     logo: nagasakiLogo,
     bandcampUrl: 'https://nagasakisunrise.bandcamp.com/',

@@ -11,6 +11,68 @@ export function BandDossier() {
     band?.latestReleaseId != null
       ? releases.find((release) => release.id === band.latestReleaseId)
       : undefined;
+  const linkMatcher =
+    /(https?:\/\/[^\s)]+|www\.[^\s)]+|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}|(?:[a-zA-Z0-9-]+\.)+[A-Za-z]{2,}(?:\/[^\s)]+)?)/gi;
+  const urlDetector = /^(https?:\/\/[^\s)]+|www\.[^\s)]+)/i;
+  const emailDetector = /^[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}$/i;
+  const domainDetector = /^(?:[a-zA-Z0-9-]+\.)+[A-Za-z]{2,}(?:\/[^\s)]+)?$/i;
+
+  const renderNoteContent = (note: string) => {
+    const matcher = new RegExp(linkMatcher);
+
+    return note.split(matcher).map((segment, index) => {
+      if (!segment) {
+        return null;
+      }
+
+      if (urlDetector.test(segment)) {
+        const href = segment.startsWith('http') ? segment : `https://${segment}`;
+        return (
+          <a
+            key={`note-link-${index}`}
+            href={href}
+            target="_blank"
+            rel="noreferrer"
+            className="underline hover:text-[#7fd1ae] break-all"
+          >
+            {segment}
+          </a>
+        );
+      }
+
+      if (emailDetector.test(segment)) {
+        return (
+          <a
+            key={`note-email-${index}`}
+            href={`mailto:${segment}`}
+            className="underline hover:text-[#7fd1ae] break-all"
+          >
+            {segment}
+          </a>
+        );
+      }
+
+      if (domainDetector.test(segment)) {
+        return (
+          <a
+            key={`note-domain-${index}`}
+            href={`https://${segment}`}
+            target="_blank"
+            rel="noreferrer"
+            className="underline hover:text-[#7fd1ae] break-all"
+          >
+            {segment}
+          </a>
+        );
+      }
+
+      return (
+        <span key={`note-text-${index}`} className="break-words">
+          {segment}
+        </span>
+      );
+    });
+  };
 
   if (!band) {
     return (
@@ -183,7 +245,7 @@ export function BandDossier() {
             {band.notes.map((note, index) => (
               <li key={index} className="text-sm flex gap-3">
                 <span className="text-[#896000]">-</span>
-                <span>{note}</span>
+                <span>{renderNoteContent(note)}</span>
               </li>
             ))}
           </ul>
