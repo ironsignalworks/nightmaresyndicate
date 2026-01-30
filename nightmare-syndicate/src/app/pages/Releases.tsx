@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { Panel } from '@/app/components/Panel';
-import { Stamp } from '@/app/components/Stamp';
 import { releases } from '@/app/data/mockData';
 
 export function Releases() {
@@ -20,17 +19,29 @@ export function Releases() {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
         {visibleReleases.map((release) => {
-          const normalizedStatus = release.status.toUpperCase();
-          const variant =
-            normalizedStatus.includes('AVAILABLE') || normalizedStatus.includes('PRE-ORDER')
-              ? 'white'
-              : 'red';
+          const show2026Banner = release.id === 'nsr-04-hcw';
 
           return (
             <Panel key={release.id} className="flex flex-col h-full">
-              <div className="mb-4">
-                <Stamp text={release.status} variant={variant} />
-              </div>
+              {release.coverImage && (
+                <div className="mb-4 border border-[#7fd1ae]/30 relative">
+                  <img
+                    src={release.coverImage}
+                    alt={`${release.title} cover`}
+                    className="w-full object-contain"
+                  />
+                  {show2026Banner && (
+                    <div className="banner-strap translate-y-4">
+                      <span className="stencil-font">
+                        DROPPING
+                        <br />
+                        2026
+                      </span>
+                    </div>
+                  )}
+                </div>
+              )}
+              <div className="mb-4" />
 
             <div className="space-y-3 mb-6 flex-grow">
               <div className="border-b border-[#7fd1ae]/30 pb-2">

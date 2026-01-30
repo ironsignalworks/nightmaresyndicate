@@ -26,6 +26,12 @@ function getStatusVariant(status: string): 'red' | 'white' {
 
 function ReleaseCard({ release, stampText, bodyCopy, footerNote, actions, className = '' }: ReleaseCardProps) {
   const statusVariant = getStatusVariant(release.status);
+  const strapLines =
+    release.id === 'nsr-01-a1x-rogue' && release.releaseDate
+      ? ['OUT 13 FEB', '2026']
+      : release.id === 'nsr-04-hcw'
+        ? ['DROPPING', '2026']
+        : null;
 
   return (
     <Panel className={`self-stretch flex flex-col gap-4 ${className}`}>
@@ -37,14 +43,13 @@ function ReleaseCard({ release, stampText, bodyCopy, footerNote, actions, classN
             className="w-full"
             imageClassName="object-cover border border-[#7fd1ae]/30 rounded"
           />
-          {release.id === 'nsr-01-a1x-rogue' && release.releaseDate && (
-            <div
-              className="absolute top-3 left-3"
-              style={{ transform: 'rotate(-6deg)' }}
-            >
-              <div className="bg-[#7fd1ae] text-[#050505] px-4 py-2 rounded shadow-lg tracking-[0.3em] text-xs uppercase border border-[#050505]/30">
-                OUT {release.releaseDate.toUpperCase()}
-              </div>
+          {strapLines && (
+            <div className="banner-strap">
+              <span className="stencil-font">
+                {strapLines[0]}
+                <br />
+                {strapLines[1]}
+              </span>
             </div>
           )}
         </div>
