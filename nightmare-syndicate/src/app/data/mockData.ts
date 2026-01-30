@@ -7,11 +7,12 @@ import hcwFront from '../../../img/psdw.png';
 import hcwBack from '../../../img/psde.png';
 import selvajariaLogo from '../../../img/selva1.png';
 import vortexLogo from '../../../img/vortex1.png';
-import falloutThumb from '../../../img/fallout1.png';
 import nagasakiLogo from '../../../img/nagasakilogo.png';
 import nagasakiVisualOne from '../../../img/nagasaki1.png';
 import nagasakiVisualTwo from '../../../img/nagasaki2.png';
 import nagasakiCover from '../../../img/nagasakicover1.png';
+import distalgiaCover from '../../../img/distalgia1.png';
+import nukefinderImage from '../../../img/nukefinder.png';
 
 export interface Band {
   id: string;
@@ -47,6 +48,7 @@ export interface Release {
   limitedNote?: string;
   limitedLinkLabel?: string;
   limitedLinkUrl?: string;
+  soldOutBannerText?: string;
 }
 
 export interface Dossier {
@@ -158,7 +160,8 @@ export const bands: Band[] = [
       'Operational doctrine: Document the collapse. Preserve the noise. Do not sanitize.',
       'Status: ACTIVE. Location: REDACTED.',
     ],
-    logo: falloutThumb,
+    logo: nukefinderImage,
+    gallery: [nukefinderImage],
   },
 ];
 
@@ -258,8 +261,24 @@ Expect more synths, more chaos, more paranoia, more video transmissions, promo p
     externalUrl: 'https://fatalexposure.bandcamp.com/',
   },
   {
-    id: 'nsr-05-distroyer',
+    id: 'tnt-01-distalgia',
     catalogId: 'TNT-02',
+    artist: 'NAGASAKI SUNRISE',
+    title: 'DISTALGIA',
+    format: 'CD',
+    year: 2021,
+    status: 'SOLD OUT',
+    tags: ['PACIFIC RIM CRUST', 'CD', 'ARCHIVAL SIGNAL'],
+    description:
+      'Tracked at sunrise on September 11, 2021, DISTALGIA captures Nagasaki Sunrise bending rusted hull resonance, reclaimed air-raid sirens, and crust bombardments into a single dawn transmission. Tanayte! Records issued 200 copies as part of the Nightmare Syndicate sublabel experiment—each unit stamped, scorched, and routed through allied bunkers.',
+    coverImage: distalgiaCover,
+    releaseDate: '11 September 2021',
+    limitedNote: 'Limited to 200 copies. SOLD OUT.',
+    soldOutBannerText: 'SOLD OUT',
+  },
+  {
+    id: 'nsr-05-distroyer',
+    catalogId: 'TNT-03',
     artist: 'NAGASAKI SUNRISE',
     title: 'DISTROYER',
     format: 'CD',
@@ -273,6 +292,7 @@ Expect more synths, more chaos, more paranoia, more video transmissions, promo p
     limitedNote: 'CD edition only. Joint deployment with Symphony of Destruction Records.',
     limitedLinkLabel: 'Symphony of Destruction Records',
     limitedLinkUrl: 'https://www.symphonyofdestruction.org/',
+    soldOutBannerText: 'SOLD OUT',
   },
 ];
 

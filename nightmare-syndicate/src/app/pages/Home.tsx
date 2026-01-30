@@ -26,6 +26,7 @@ function ReleaseCard({ release, stampText, bodyCopy, footerNote, actions, classN
       : release.id === 'nsr-04-hcw'
         ? ['DROPPING', '2026']
         : null;
+  const soldOutText = release.soldOutBannerText;
 
   return (
     <Panel className={`self-stretch flex flex-col gap-4 ${className}`}>
@@ -46,6 +47,11 @@ function ReleaseCard({ release, stampText, bodyCopy, footerNote, actions, classN
                   </span>
                 ))}
               </span>
+            </div>
+          )}
+          {soldOutText && (
+            <div className="banner-strap translate-y-4">
+              <span className="stencil-font">{soldOutText}</span>
             </div>
           )}
         </div>
@@ -116,7 +122,32 @@ function ReleaseCard({ release, stampText, bodyCopy, footerNote, actions, classN
 }
 
 export function Home() {
-  const latestRelease = releases[0];
+  const availabilityFilter = (release: Release) => {
+    const normalized = release.status.toUpperCase();
+    return (
+      !normalized.includes('COMING SOON') &&
+      !normalized.includes('PRE-ORDER') &&
+      !normalized.includes('CLASSIFIED')
+    );
+  };
+  const fatalExposureReleases = releases.filter(
+    (release) => release.artist.toUpperCase().includes('FATAL EXPOSURE') && availabilityFilter(release),
+  );
+  const latestRelease =
+    fatalExposureReleases.reduce<Release | null>((latest, current) => {
+      if (!latest) {
+        return current;
+      }
+      if (current.year > latest.year) {
+        return current;
+      }
+      if (current.year === latest.year) {
+        const currentDate = current.releaseDate ? Date.parse(current.releaseDate) : 0;
+        const latestDate = latest.releaseDate ? Date.parse(latest.releaseDate) : 0;
+        return currentDate > latestDate ? current : latest;
+      }
+      return latest;
+    }, null) ?? fatalExposureReleases[0] ?? releases.find((r) => r.artist.toUpperCase().includes('FATAL EXPOSURE')) ?? null;
   const upcomingRelease = releases.find((r) =>
     r.title.toLowerCase().includes('human crust of war'),
   );

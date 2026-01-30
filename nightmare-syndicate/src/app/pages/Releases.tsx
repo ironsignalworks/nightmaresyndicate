@@ -39,6 +39,11 @@ export function Releases() {
                       </span>
                     </div>
                   )}
+                  {release.soldOutBannerText && (
+                    <div className="banner-strap translate-y-4">
+                      <span className="stencil-font">{release.soldOutBannerText}</span>
+                    </div>
+                  )}
                 </div>
               )}
               <div className="mb-4" />
