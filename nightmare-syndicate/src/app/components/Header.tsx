@@ -1,17 +1,24 @@
 import { Link, useLocation } from 'react-router-dom';
 import headerLogo from '../../../img/syndicate_logo2.png';
 
+type NavLink = {
+  path: string;
+  label: string;
+  className?: string;
+};
+
 export function Header() {
   const location = useLocation();
 
-  const navLinks = [
+  const navLinks: NavLink[] = [
     { path: '/', label: 'HOME' },
-    { path: '/roster', label: 'ROSTER' },
     { path: '/releases', label: 'RELEASES' },
+    { path: '/roster', label: 'ROSTER' },
     { path: '/merch', label: 'MERCH' },
     { path: '/dossiers', label: 'DOSSIERS' },
     { path: '/submit', label: 'SUBMIT' },
     { path: '/contact', label: 'CONTACT' },
+    { path: '/login', label: 'LOG IN', className: 'sm:hidden' },
   ];
 
   return (
@@ -36,7 +43,7 @@ export function Header() {
             </div>
             <Link
               to="/login"
-              className="folder-tab border border-[#7fd1ae]/40 px-4 py-2 text-xs uppercase tracking-[0.3em] text-center"
+              className="folder-tab border border-[#7fd1ae]/40 px-4 py-2 text-xs uppercase tracking-[0.3em] text-center hidden sm:block"
             >
               LOG IN
             </Link>
@@ -51,7 +58,7 @@ export function Header() {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`folder-tab ${isActive ? 'folder-tab--active' : ''}`}
+                  className={`folder-tab ${isActive ? 'folder-tab--active' : ''} ${link.className ?? ''}`}
                   aria-current={isActive ? 'page' : undefined}
                 >
                   {link.label}
@@ -64,3 +71,5 @@ export function Header() {
     </header>
   );
 }
+
+

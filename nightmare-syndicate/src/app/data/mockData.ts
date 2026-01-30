@@ -89,7 +89,7 @@ export const bands: Band[] = [
     id: 'selvajaria',
     name: 'SELVAJARIA RECORDS',
     status: 'OPERATIVE LABEL',
-    classification: 'ALLY - DISTRIBUTION CELL',
+    classification: 'ALLY - LABEL',
     region: 'LISBON, PT',
     summary:
       'Lisbon imprint entrusted with radiological punk logistics. Co-issued Bikini Atoll Broadcast and routes mail-order fallout via selvajariarecords.com.',
@@ -105,7 +105,7 @@ export const bands: Band[] = [
     id: 'vortex',
     name: 'VORTEX RECORDS',
     status: 'OPERATIVE LABEL',
-    classification: 'ALLY - DISTRIBUTION CELL',
+    classification: 'ALLY - LABEL',
     region: 'LISBOA, PT',
     summary:
       'Vortex is an underground collective powering live shows and running stealth distribution routes across Lisbon. Tap into IG @vortex_associacao for coded drops. Contact: vortex.lisboa@gmail.com.',
