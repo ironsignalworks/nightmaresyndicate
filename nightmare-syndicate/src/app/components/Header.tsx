@@ -31,10 +31,8 @@ export function Header() {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 items-stretch">
-            <div className="border border-[#896000] px-3 py-1 flex items-center justify-center">
-              <span className="text-xs text-[#896000] font-bold tracking-wider">
-                CLASSIFICATION: REDACTED
-              </span>
+            <div className="tab-control text-[0.55rem] tracking-[0.3em] px-4 py-2">
+              CLASSIFICATION: REDACTED
             </div>
             <Link
               to="/login"

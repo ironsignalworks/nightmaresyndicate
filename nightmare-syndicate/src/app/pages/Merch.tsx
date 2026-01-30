@@ -43,7 +43,7 @@ export function Merch() {
           <Stamp text="COMING SOON" />
           <Link
             to="/releases/nsr-01-a1x-rogue"
-            className="border border-[#896000] px-4 py-2 text-sm uppercase tracking-[0.2em] hover:bg-[#896000] hover:text-[#7fd1ae] transition-colors"
+            className="tab-control text-[0.6rem] tracking-[0.3em]"
           >
             READ DOSSIER
           </Link>

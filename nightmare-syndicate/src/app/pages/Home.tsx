@@ -19,16 +19,10 @@ type ReleaseCardProps = {
   className?: string;
 };
 
-function getStatusVariant(status: string): 'red' | 'white' {
-  const normalized = status.toUpperCase();
-  return normalized.includes('AVAILABLE') || normalized.includes('PRE-ORDER') ? 'white' : 'red';
-}
-
 function ReleaseCard({ release, stampText, bodyCopy, footerNote, actions, className = '' }: ReleaseCardProps) {
-  const statusVariant = getStatusVariant(release.status);
   const strapLines =
     release.id === 'nsr-01-a1x-rogue' && release.releaseDate
-      ? ['OUT 13 FEB', '2026']
+      ? ['OUT FEB 13', '2026']
       : release.id === 'nsr-04-hcw'
         ? ['DROPPING', '2026']
         : null;
@@ -46,17 +40,19 @@ function ReleaseCard({ release, stampText, bodyCopy, footerNote, actions, classN
           {strapLines && (
             <div className="banner-strap">
               <span className="stencil-font">
-                {strapLines[0]}
-                <br />
-                {strapLines[1]}
+                {strapLines.map((line, idx) => (
+                  <span key={`${line}-${idx}`} className="block text-center">
+                    {line}
+                  </span>
+                ))}
               </span>
             </div>
           )}
         </div>
       )}
-      <div className="flex items-center gap-3">
-        <Stamp text={stampText} />
-      </div>
+        <div className="flex items-center gap-3">
+          <Stamp text={stampText} />
+        </div>
       <div className="space-y-3 flex-grow">
         <div className="border-b border-[#7fd1ae]/30 pb-2">
           <span className="text-xs text-[#7fd1ae]">CATALOG</span>
@@ -81,7 +77,7 @@ function ReleaseCard({ release, stampText, bodyCopy, footerNote, actions, classN
           </div>
           <div>
             <span className="text-xs text-[#7fd1ae] block">STATUS</span>
-            <Stamp text={release.status} variant={statusVariant} />
+            <Stamp text={release.status} />
           </div>
         </div>
         {release.releaseDate && (
@@ -154,16 +150,10 @@ export function Home() {
           methods are <RedactedText />. Surveillance is assumed.
         </WarningBox>
         <div className="flex gap-3 mt-6">
-          <Link
-            to="/releases"
-            className="border border-[#878785] px-6 py-3 text-sm hover:bg-[#878785] hover:text-[#7fd1ae] transition-colors"
-          >
+          <Link to="/releases" className="tab-control text-sm tracking-[0.3em]">
             VIEW RELEASES
           </Link>
-          <Link
-            to="/roster"
-            className="border border-[#878785] px-6 py-3 text-sm hover:bg-[#878785] hover:text-[#7fd1ae] transition-colors"
-          >
+          <Link to="/roster" className="tab-control text-sm tracking-[0.3em]">
             VIEW ROSTER
           </Link>
         </div>
@@ -198,10 +188,7 @@ export function Home() {
               </div>
             }
             actions={
-              <Link
-                to={`/releases/${latestRelease.id}`}
-                className="border border-[#896000] px-4 py-2 text-sm hover:bg-[#896000] hover:text-[#7fd1ae] transition-colors"
-              >
+              <Link to={`/releases/${latestRelease.id}`} className="tab-control text-sm tracking-[0.3em]">
                 READ DOSSIER
               </Link>
             }
@@ -227,10 +214,7 @@ export function Home() {
               </>
             }
             actions={
-              <Link
-                to={`/releases/${upcomingRelease.id}`}
-                className="border border-[#896000] px-4 py-2 text-sm hover:bg-[#896000] hover:text-[#7fd1ae] transition-colors"
-              >
+              <Link to={`/releases/${upcomingRelease.id}`} className="tab-control text-sm tracking-[0.3em]">
                 READ DOSSIER
               </Link>
             }
@@ -296,7 +280,7 @@ export function Home() {
           <div className="mt-6">
             <Link
               to="/releases/nsr-01-a1x-rogue#videos"
-              className="inline-flex items-center justify-center border border-[#896000] px-6 py-3 text-xs uppercase tracking-[0.3em] hover:bg-[#896000] hover:text-[#7fd1ae] transition-colors"
+              className="tab-control text-xs tracking-[0.3em]"
             >
               WATCH ALL VIDEOS
             </Link>

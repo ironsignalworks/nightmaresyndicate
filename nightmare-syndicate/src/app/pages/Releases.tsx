@@ -70,11 +70,11 @@ export function Releases() {
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-1">
+              <div className="flex flex-wrap gap-2">
                 {release.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="inline-flex items-center justify-center text-center text-xs border border-[#7fd1ae]/30 px-2 py-0.5"
+                    className="tab-control text-[0.6rem] px-3 py-1"
                   >
                     {tag}
                   </span>
@@ -84,7 +84,7 @@ export function Releases() {
 
             <Link
               to={`/releases/${release.id}`}
-              className="block border border-[#878785] px-4 py-2 text-xs text-center hover:bg-[#878785] hover:text-[#7fd1ae] transition-colors"
+              className="tab-control text-xs tracking-[0.3em]"
             >
               OPEN FILE
             </Link>

@@ -15,8 +15,8 @@ export function Roster() {
         {bands.map((band) => (
           <Panel key={band.id} className="flex flex-col h-full">
             <div className="mb-4 flex gap-2 flex-wrap">
-              <Stamp text={band.status} variant={band.status === 'ACTIVE' ? 'red' : 'white'} />
-              <Stamp text={band.classification} variant="white" />
+              <Stamp text={band.status} />
+              <Stamp text={band.classification} />
             </div>
 
             <h2 className="text-xl mb-4">{band.name}</h2>
@@ -49,7 +49,7 @@ export function Roster() {
 
             <Link
               to={`/roster/${band.id}`}
-              className="mt-6 block border border-[#878785] px-6 py-2 text-sm text-center hover:bg-[#878785] hover:text-[#7fd1ae] transition-colors"
+              className="tab-control !flex w-full justify-center mt-6 text-xs tracking-[0.3em]"
             >
               OPEN DOSSIER
             </Link>

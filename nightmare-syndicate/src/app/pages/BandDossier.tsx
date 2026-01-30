@@ -25,8 +25,6 @@ export function BandDossier() {
     );
   }
 
-  const statusVariant = band.status.toUpperCase().includes('ACTIVE') ? 'red' : 'white';
-
   return (
     <main className="max-w-6xl mx-auto px-4 pt-0 pb-12">
       <Link
@@ -38,7 +36,7 @@ export function BandDossier() {
 
       <Panel>
         <div className="mb-6">
-          <Stamp text={band.status} variant={statusVariant} />
+          <Stamp text={band.status} />
         </div>
 
         <h1 className="text-3xl mb-4">{band.name}</h1>
@@ -117,7 +115,7 @@ export function BandDossier() {
             <div className="flex flex-wrap gap-3 pt-2">
               <Link
                 to={`/releases/${latestRelease.id}`}
-                className="border border-[#878785] px-4 py-2 text-xs uppercase tracking-[0.3em] text-center hover:bg-[#878785] hover:text-[#7fd1ae] transition-colors"
+                className="tab-control text-[0.6rem] tracking-[0.3em]"
               >
                 OPEN RELEASE FILE
               </Link>
@@ -126,7 +124,7 @@ export function BandDossier() {
                   href={latestRelease.externalUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="border border-[#7fd1ae]/50 px-4 py-2 text-xs uppercase tracking-[0.3em] text-center hover:bg-[#7fd1ae]/10 transition-colors"
+                  className="tab-control text-[0.6rem] tracking-[0.3em]"
                 >
                   BANDCAMP
                 </a>
@@ -140,7 +138,7 @@ export function BandDossier() {
             <span className="text-xs text-[#7fd1ae] block mb-1">UPCOMING TRANSMISSION</span>
             <Link
               to="/releases/nsr-04-hcw"
-              className="text-sm text-[#7fd1ae] font-bold underline underline-offset-2 hover:text-white transition-colors"
+              className="tab-control text-[0.6rem] tracking-[0.3em]"
             >
               {band.upcomingRelease}
             </Link>
@@ -156,7 +154,7 @@ export function BandDossier() {
               href={band.bandcampUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex w-full items-center justify-center border border-[#7fd1ae]/50 px-4 py-3 text-sm uppercase tracking-[0.3em] hover:bg-[#7fd1ae]/10 transition-colors"
+              className="tab-control !flex w-full justify-center text-xs tracking-[0.3em]"
             >
               VISIT BANDCAMP
             </a>

@@ -47,10 +47,7 @@ export function Login() {
               placeholder="************"
             />
           </div>
-          <button
-            type="submit"
-            className="w-full border border-[#896000] px-4 py-3 text-sm uppercase tracking-[0.3em] hover:bg-[#896000] hover:text-[#7fd1ae] transition-colors"
-          >
+          <button type="submit" className="tab-control !flex w-full justify-center text-xs tracking-[0.3em]">
             authorize login
           </button>
         </form>

@@ -43,7 +43,7 @@ export function ReleaseDetail() {
 
       <Panel>
         <div className="mb-6">
-          <Stamp text={release.status} variant={isAvailable ? 'white' : 'red'} />
+          <Stamp text={release.status} />
         </div>
 
         <h1 className="text-2xl mb-2">{release.title}</h1>
@@ -113,7 +113,7 @@ export function ReleaseDetail() {
             {release.tags.map((tag) => (
               <span
                 key={tag}
-                className="inline-flex items-center justify-center text-center text-xs border border-[#7fd1ae]/30 px-3 py-1"
+                className="tab-control text-[0.55rem] px-3 py-1"
               >
                 {tag}
               </span>
@@ -178,7 +178,7 @@ export function ReleaseDetail() {
 
         <div className="mt-6 flex flex-col gap-3">
           {isAvailable && (
-            <button className="w-full border border-[#896000] px-6 py-3 text-sm text-center hover:bg-[#896000] hover:text-[#7fd1ae] transition-colors">
+            <button className="tab-control !flex w-full justify-center text-xs tracking-[0.3em]">
               ACQUIRE [CONTACT REQUIRED]
             </button>
           )}
@@ -188,7 +188,7 @@ export function ReleaseDetail() {
               href={release.externalUrl}
               target="_blank"
               rel="noreferrer"
-              className="w-full border border-[#7fd1ae]/50 px-6 py-3 text-center text-sm hover:bg-[#7fd1ae]/10 transition-colors"
+              className="tab-control !flex w-full justify-center text-xs tracking-[0.3em]"
             >
               VISIT BANDCAMP
             </a>
