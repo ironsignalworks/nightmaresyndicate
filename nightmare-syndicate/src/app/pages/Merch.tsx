@@ -6,6 +6,7 @@ import teeOne from '../../../img/t1.gif';
 import teeTwo from '../../../img/t2.gif';
 import teeThree from '../../../img/t3.gif';
 import posterAlt from '../../../img/poster2.png';
+import cd6Image from '../../../img/cd6.jpeg';
 
 function MerchItem({
   title,
@@ -37,8 +38,14 @@ export function Merch() {
 
       <MerchItem
         title="BIKINI ATOLL BROADCAST / CD"
-        desc="Official NSR-01-A1X-ROGUE disc. Includes the tour program fanzine plus access to the classified video dossier. 200 units only."
+        desc="Official NSR-01-A1X-ROGUE disc. Includes the tour program fanzine plus access to the classified video dossier. 200 units only. Release date: 13 February 2026."
       >
+        <LightboxImage
+          src={cd6Image}
+          alt="Bikini Atoll Broadcast cd6"
+          className="w-[30%] min-w-[140px]"
+          imageClassName="w-full aspect-square object-cover border border-[#7fd1ae]/30 rounded"
+        />
         <div className="flex flex-wrap gap-3">
           <Stamp text="COMING SOON" />
           <Link
@@ -67,8 +74,8 @@ export function Merch() {
               <LightboxImage
                 src={shirt.img}
                 alt={shirt.title}
-                className="w-full"
-                imageClassName="w-full h-40 object-contain"
+                className="w-full aspect-square"
+                imageClassName="w-full h-full object-cover"
               />
               <p className="text-sm text-white font-semibold">{shirt.title}</p>
               <span className="text-xs text-[#7fd1ae] tracking-[0.2em] uppercase">{shirt.note}</span>

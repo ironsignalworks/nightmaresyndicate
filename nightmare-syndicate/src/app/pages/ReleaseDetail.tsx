@@ -110,6 +110,23 @@ export function ReleaseDetail() {
           </div>
         )}
 
+        {release.galleryImages && release.galleryImages.length > 0 && (
+          <div className="mb-8">
+            <h2 className="text-sm text-[#7fd1ae] mb-3">CD IMAGE FILES</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              {release.galleryImages.map((image, index) => (
+                <LightboxImage
+                  key={`${release.id}-gallery-${index}`}
+                  src={image}
+                  alt={`${release.title} cd${index + 1}`}
+                  className="w-full"
+                  imageClassName="object-cover border border-[#7fd1ae]/30 rounded"
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
         <div className="mb-8">
           <h2 className="text-sm text-[#7fd1ae] mb-3">DESCRIPTION</h2>
           <p className="text-sm leading-relaxed whitespace-pre-line">

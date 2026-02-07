@@ -23,15 +23,8 @@ export function Contact() {
             </div>
 
             <div className="border-b border-[#7fd1ae]/30 pb-3">
-              <span className="text-xs text-[#7fd1ae] block mb-1">PGP KEY</span>
-              <p className="font-mono text-xs break-all">
-                A4F9 B21C 8D3E 7F6A 9C2B 5E1D 4A8C 7F3B 2D9E 6A1F
-              </p>
-            </div>
-
-            <div className="border-b border-[#7fd1ae]/30 pb-3">
               <span className="text-xs text-[#7fd1ae] block mb-1">RESPONSE TIME</span>
-              <p>7-14 days. Non-urgent inquiries only.</p>
+              <p>7-14 days. Non-urgent inquiries only. We might not reply.</p>
             </div>
           </div>
         </Panel>

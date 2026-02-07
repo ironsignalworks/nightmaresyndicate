@@ -13,6 +13,12 @@ import nagasakiVisualTwo from '../../../img/nagasaki2.png';
 import nagasakiCover from '../../../img/nagasakicover1.png';
 import distalgiaCover from '../../../img/distalgia1.png';
 import nukefinderImage from '../../../img/nukefinder.png';
+import cd1Image from '../../../img/cd1.jpeg';
+import cd2Image from '../../../img/cd2.jpeg';
+import cd3Image from '../../../img/cd3.jpeg';
+import cd4Image from '../../../img/cd4.jpeg';
+import cd5Image from '../../../img/cd5.jpeg';
+import cd6Image from '../../../img/cd6.jpeg';
 
 export interface Band {
   id: string;
@@ -49,6 +55,7 @@ export interface Release {
   limitedLinkLabel?: string;
   limitedLinkUrl?: string;
   soldOutBannerText?: string;
+  galleryImages?: string[];
 }
 
 export interface Dossier {
@@ -215,6 +222,7 @@ Compliance is assumed. Playback constitutes consent.`,
       'https://www.youtube.com/watch?v=Ro-oi2_KNi4',
       'https://www.youtube.com/watch?v=t0OVM-8ZTOw',
     ],
+    galleryImages: [cd1Image, cd2Image, cd3Image, cd4Image, cd5Image, cd6Image],
     releaseDate: '13 February 2026',
     limitedNote:
       'Limited to 200 contaminated copies. Includes the tour program fanzine and access to the classified video dossier. No repress scheduled.',

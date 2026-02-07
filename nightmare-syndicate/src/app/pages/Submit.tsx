@@ -21,7 +21,7 @@ export function Submit() {
           </li>
           <li className="text-sm flex gap-3">
             <span className="text-[#896000]">▪</span>
-            <span>No genre restrictions. Anything goes</span>
+            <span>No genre restrictions. Anything goes, but we might not like it</span>
           </li>
           <li className="text-sm flex gap-3">
             <span className="text-[#896000]">▪</span>
@@ -58,7 +58,7 @@ export function Submit() {
 
           <p>
             Response time: 4-8 weeks minimum. 
-            No confirmation of receipt will be provided.
+            No confirmation of receipt will be provided. We might not reply.
           </p>
 
           <p className="text-[#896000]">

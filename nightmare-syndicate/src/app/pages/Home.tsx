@@ -61,40 +61,40 @@ function ReleaseCard({ release, stampText, bodyCopy, footerNote, actions, classN
         </div>
       <div className="space-y-3 flex-grow">
         <div className="border-b border-[#7fd1ae]/30 pb-2">
-          <span className="text-xs text-[#7fd1ae]">CATALOG</span>
+          <span className="text-sm text-[#7fd1ae]">CATALOG</span>
           <p className="font-bold">{release.catalogId}</p>
         </div>
         <div className="border-b border-[#7fd1ae]/30 pb-2">
-          <span className="text-xs text-[#7fd1ae]">ARTIST</span>
+          <span className="text-sm text-[#7fd1ae]">ARTIST</span>
           <p className="font-bold">{release.artist}</p>
         </div>
         <div className="border-b border-[#7fd1ae]/30 pb-2">
-          <span className="text-xs text-[#7fd1ae]">TITLE</span>
+          <span className="text-sm text-[#7fd1ae]">TITLE</span>
           <p className="font-bold">{release.title}</p>
         </div>
         <div className="grid grid-cols-3 gap-4 border-b border-[#7fd1ae]/30 pb-2">
           <div>
-            <span className="text-xs text-[#7fd1ae] block">FORMAT</span>
+            <span className="text-sm text-[#7fd1ae] block">FORMAT</span>
             <p className="text-sm">{release.format}</p>
           </div>
           <div>
-            <span className="text-xs text-[#7fd1ae] block">YEAR</span>
+            <span className="text-sm text-[#7fd1ae] block">YEAR</span>
             <p className="text-sm">{release.year}</p>
           </div>
           <div>
-            <span className="text-xs text-[#7fd1ae] block">STATUS</span>
+            <span className="text-sm text-[#7fd1ae] block">STATUS</span>
             <Stamp text={release.status} />
           </div>
         </div>
         {release.releaseDate && (
           <div className="border-b border-[#7fd1ae]/30 pb-2">
-            <span className="text-xs text-[#7fd1ae] block">RELEASE DATE</span>
+            <span className="text-sm text-[#7fd1ae] block">RELEASE DATE</span>
             <p className="text-sm">{release.releaseDate}</p>
           </div>
         )}
         {release.limitedNote && (
           <div className="border-b border-[#7fd1ae]/30 pb-2">
-            <span className="text-xs text-[#7fd1ae] block">LIMITED RUN</span>
+            <span className="text-sm text-[#7fd1ae] block">LIMITED RUN</span>
             <p className="text-sm text-white">
               {release.limitedNote}
               {release.limitedLinkUrl && (
@@ -152,6 +152,8 @@ export function Home() {
     r.title.toLowerCase().includes('human crust of war'),
   );
   const bikiniRelease = releases.find((r) => r.id === 'nsr-01-a1x-rogue');
+  const bikiniCd2 = bikiniRelease?.galleryImages?.[1];
+  const bikiniCd3 = bikiniRelease?.galleryImages?.[2];
 
   const getYoutubeId = (url: string) => {
     try {
@@ -185,7 +187,7 @@ export function Home() {
           NIGHTMARE SYNDICATE RECORDS operates outside conventional music industry structures. We
           document, preserve, and distribute irradiated underground music transmissions.
         </p>
-        <p className="text-xs text-white mb-6">
+        <p className="text-sm text-white mb-6">
           Intel line:{' '}
           <a href="mailto:info@nightmaresyndicaterecords.com" className="underline">
             info@nightmaresyndicaterecords.com
@@ -195,6 +197,38 @@ export function Home() {
           All operations are conducted independently. Locations are <RedactedText />. Distribution
           methods are <RedactedText />. Surveillance is assumed.
         </WarningBox>
+        {(bikiniCd2 || bikiniCd3) && (
+          <div className="mt-4">
+            <div className="border border-dashed border-[#242422]/60 bg-[#242422]/50 p-4">
+              <div className="flex items-center gap-3 flex-wrap">
+                <span className="tab-control text-xs tracking-[0.3em] uppercase px-3 py-1">
+                  [LATEST FEEDBACK]
+                </span>
+                <p className="text-sm text-white leading-relaxed">
+                  <span className="font-bold">Bikini Atoll Broadcast</span> lands on 13 February 2026.
+                </p>
+              </div>
+              <div className="flex items-start gap-3 mt-3">
+                {bikiniCd2 && (
+                  <LightboxImage
+                    src={bikiniCd2}
+                    alt="Bikini Atoll Broadcast cd2"
+                    className="w-32 shrink-0"
+                    imageClassName="object-cover border border-[#7fd1ae]/30 rounded"
+                  />
+                )}
+                {bikiniCd3 && (
+                  <LightboxImage
+                    src={bikiniCd3}
+                    alt="Bikini Atoll Broadcast cd3"
+                    className="w-32 shrink-0"
+                    imageClassName="object-cover border border-[#7fd1ae]/30 rounded"
+                  />
+                )}
+              </div>
+            </div>
+          </div>
+        )}
         <div className="flex gap-3 mt-6">
           <Link to="/releases" className="tab-control text-sm tracking-[0.3em]">
             VIEW RELEASES
@@ -211,7 +245,7 @@ export function Home() {
             release={latestRelease}
             stampText="LATEST RELEASE"
             footerNote={
-              <div className="text-xs text-white space-y-1">
+              <div className="text-sm text-white space-y-1">
                 {latestRelease.selvajariaUrl && (
                   <p>
                     Distribution partner:{' '}
@@ -297,7 +331,7 @@ export function Home() {
         <Panel className="mt-10">
           <div className="mb-4 flex items-center gap-3">
             <Stamp text="LIVE FOOTAGE" />
-            <p className="text-xs text-[#7fd1ae] tracking-[0.3em] uppercase">
+            <p className="text-sm text-[#7fd1ae] tracking-[0.3em] uppercase">
               bikini atoll broadcast
             </p>
           </div>
@@ -316,7 +350,7 @@ export function Home() {
                   className="w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="text-[#7fd1ae] tracking-[0.3em] uppercase text-xs">
+                  <span className="text-[#7fd1ae] tracking-[0.3em] uppercase text-sm">
                     watch
                   </span>
                 </div>
@@ -326,13 +360,14 @@ export function Home() {
           <div className="mt-6">
             <Link
               to="/releases/nsr-01-a1x-rogue#videos"
-              className="tab-control text-xs tracking-[0.3em]"
+              className="tab-control text-sm tracking-[0.3em]"
             >
               WATCH ALL VIDEOS
             </Link>
           </div>
         </Panel>
       )}
+
     </main>
   );
 }
